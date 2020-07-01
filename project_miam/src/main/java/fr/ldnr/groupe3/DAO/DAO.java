@@ -9,23 +9,23 @@ public abstract class DAO<T> {
 	// protected Connection connection = MySQLConnection.getInstance();
 
 	/**
-	 * Permet de rÃ©cupÃ©rer un objet via son ID
+	 * Permet de récupèrer un objet via son ID
 	 *
 	 * @param id
-	 * @return lâ€™objet recherchÃ©
+	 * @return l'objet recherchÃ©
 	 */
 	public abstract T find(Long id);
 
 	/**
-	 * Permet de crÃ©er une entrÃ©e dans la base de donnÃ©es par rapport Ã  un objet
+	 * Permet de créer une entrée dans la base de données par rapport à un objet
 	 *
 	 * @param obj
-	 * @return lâ€™objet crÃ©Ã© avec son id
+	 * @return l'objet créé avec son id
 	 */
 	public abstract T create(T obj);
 
 	/**
-	 * Permet de mettre Ã  jour les donnÃ©es d'une entrÃ©e dans la base
+	 * Permet de mettre a jour les données d'une entrée dans la base
 	 *
 	 * @param obj
 	 * @return lâ€™objet modifiÃ©
@@ -33,16 +33,16 @@ public abstract class DAO<T> {
 	public abstract T update(T obj);
 
 	/**
-	 * Permet la suppression d'une entrÃ©e de la base
+	 * Permet la suppression d'une entrée de la base
 	 *
 	 * @param obj
 	 */
 	public abstract void delete(T obj);
 
 	/**
-	 * RÃ©cupÃ¨re toutes les donnÃ©es de la table
+	 * Récupère toutes les données de la table
 	 *
-	 * @return Toutes les donnÃ©es sous forme de liste
+	 * @return Toutes les données sous forme de liste
 	 */
 	public abstract List<T> list();
 

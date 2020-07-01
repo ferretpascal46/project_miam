@@ -2,12 +2,20 @@ package fr.ldnr.groupe3.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Utilisateur implements Serializable{
 	/**
 	 * @author group3
 	 * @since 01/05/2020
 	 */
 	private static final long serialVersionUID = 1L;
+	@Id     
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUtilisateur;
     private String adresseMail;
     private String motDePasse;
