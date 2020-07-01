@@ -9,28 +9,28 @@ public class Produit implements Serializable {
 	 * @since 01/05/2020
 	 */
 	private static final long serialVersionUID = -1586713427333743572L;
-	
 	private int idProduit;
-	private String libelle;
-	private int type;
+	private String nomProduit;
+	private int typeProduit;
 	private Double prix;
 	public int getIdProduit() {
+		
 		return idProduit;
 	}
 	public void setIdProduit(int idProduit) {
 		this.idProduit = idProduit;
 	}
 	public String getLibelle() {
-		return libelle;
+		return nomProduit;
 	}
 	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+		this.nomProduit = libelle;
 	}
 	public int getType() {
-		return type;
+		return typeProduit;
 	}
 	public void setType(int type) {
-		this.type = type;
+		this.typeProduit = type;
 	}
 	public Double getPrix() {
 		return prix;
