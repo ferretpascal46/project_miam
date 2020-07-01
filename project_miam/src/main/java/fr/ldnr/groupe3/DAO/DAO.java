@@ -5,14 +5,6 @@ import java.util.List;
 public abstract class DAO<T> {
 
 	/**
-	 * Permet de récupèrer un objet via son ID
-	 *
-	 * @param id
-	 * @return l'objet recherchÃ©
-	 */
-	public abstract T find(Long id);
-
-	/**
 	 * Permet de créer une entrée dans la base de données par rapport à un objet
 	 *
 	 * @param obj
