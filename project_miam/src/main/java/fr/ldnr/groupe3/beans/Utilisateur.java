@@ -3,7 +3,10 @@ package fr.ldnr.groupe3.beans;
 import java.io.Serializable;
 
 public class Utilisateur implements Serializable{
-	// Les propriétés du bean : elles correspondent aux champs de la base de données
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
     private int idUtilisateur;
     private String adresseMail;
     private String motDePasse;
