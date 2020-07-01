@@ -13,6 +13,20 @@ public class Commande implements Serializable {
 	private int idClient;
 	private int StatusCommande;
 	private int typeCommande;
+	
+	
+	
+	public Commande() {
+		
+	}
+
+	public Commande(int idCommande, int idClient, int statusCommande, int typeCommande) {
+		super();
+		this.idCommande = idCommande;
+		this.idClient = idClient;
+		StatusCommande = statusCommande;
+		this.typeCommande = typeCommande;
+	}
 
 	public int getIdCommande() {
 		return idCommande;
@@ -45,5 +59,12 @@ public class Commande implements Serializable {
 	public void setTypeCommande(int typeCommande) {
 		this.typeCommande = typeCommande;
 	}
+
+	@Override
+	public String toString() {
+		return "Commande [idCommande=" + idCommande + ", idClient=" + idClient + ", StatusCommande=" + StatusCommande
+				+ ", typeCommande=" + typeCommande + "]";
+	}
+	
 
 }

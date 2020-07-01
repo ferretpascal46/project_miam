@@ -13,6 +13,18 @@ public class Produit implements Serializable {
 	private String nomProduit;
 	private int typeProduit;
 	private Double prix;
+	
+	public Produit() {
+		
+	}
+	
+	public Produit(int idProduit, String nomProduit, int typeProduit, Double prix) {
+		super();
+		this.idProduit = idProduit;
+		this.nomProduit = nomProduit;
+		this.typeProduit = typeProduit;
+		this.prix = prix;
+	}
 	public int getIdProduit() {
 		
 		return idProduit;
@@ -38,5 +50,13 @@ public class Produit implements Serializable {
 	public void setPrix(Double prix) {
 		this.prix = prix;
 	}
+
+	@Override
+	public String toString() {
+		return "Produit [idProduit=" + idProduit + ", nomProduit=" + nomProduit + ", typeProduit=" + typeProduit
+				+ ", prix=" + prix + "]";
+	}
+	
+	
 	
 }
