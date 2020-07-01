@@ -11,14 +11,14 @@ public class DAOManager {
 
 	public void start() {
 		this.emf = Persistence.createEntityManagerFactory("my-pu");
-		this.utilisateurDAO = new UtilisateurDAO(this.emf);
+		this.utilisateurDAO = DAOFactory.getUtilisateurDAO(this.emf);
 	}
 
 	public void stop() {
 		this.emf.close();
 	}
 	
-	public UtilisateurDAO getEmployeeDAO() {
+	public UtilisateurDAO getUtilisateurDAO() {
 		return this.utilisateurDAO;
 	}
 }

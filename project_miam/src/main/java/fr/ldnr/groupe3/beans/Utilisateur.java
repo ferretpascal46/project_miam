@@ -24,9 +24,8 @@ public class Utilisateur implements Serializable{
     public Utilisateur() {
     }
     
-	public Utilisateur(int idUtilisateur, String adresseMail, String motDePasse, int role) {
-		super();
-		this.idUtilisateur = idUtilisateur;
+	public Utilisateur(String adresseMail, String motDePasse, int role) {
+		super();		
 		this.adresseMail = adresseMail;
 		this.motDePasse = motDePasse;
 		this.role = role;

@@ -8,33 +8,58 @@ import javax.persistence.TypedQuery;
 
 import fr.ldnr.groupe3.beans.Utilisateur;
 
-public class UtilisateurDAO extends DAO<Utilisateur>{
+//public class UtilisateurDAO extends DAO<Utilisateur>{
+public class UtilisateurDAO {
 
 	private EntityManagerFactory emf;
 
 	public UtilisateurDAO(EntityManagerFactory emf) {
 		this.emf = emf;
 	}
+	
+	public void create(String adresseMail, String motDePasse, int role) {
 
-	@Override
-	public Utilisateur create(Utilisateur obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Utilisateur update(Utilisateur obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void delete(Utilisateur obj) {
-		// TODO Auto-generated method stub
+		Utilisateur user = new Utilisateur(adresseMail, motDePasse, role);
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(user);
+		em.getTransaction().commit();
+		em.close();
 		
 	}
 
-	@Override
+	public boolean update(int idUtilisateur, String adresseMail, String motDePasse, int role) {
+
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Utilisateur user = em.find(Utilisateur.class, idUtilisateur);
+		if (user != null) {
+			user.setAdresseMail(adresseMail);
+			user.setMotDePasse(motDePasse);
+			user.setRole(role);
+		} 
+		em.getTransaction().commit();
+		em.close();
+		return (user != null);
+	}
+
+	
+	public Utilisateur delete(int idUtilisateur) {
+		
+		EntityManager em = emf.createEntityManager();		
+		em.getTransaction().begin();
+		
+		Utilisateur user = em.find(Utilisateur.class, idUtilisateur);		
+		if (user != null) {
+			em.remove(user);
+		}
+		
+		em.getTransaction().commit();
+		em.close();		
+		return user;	
+	}
+
+	
 	public List<Utilisateur> list() {
 		EntityManager em = emf.createEntityManager();
 
@@ -42,7 +67,6 @@ public class UtilisateurDAO extends DAO<Utilisateur>{
 		List<Utilisateur> result = query.getResultList();
 
 		em.close();
-
 		return result;
 	}
 
