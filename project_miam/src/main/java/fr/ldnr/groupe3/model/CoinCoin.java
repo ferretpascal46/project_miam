@@ -1,6 +1,6 @@
 package fr.ldnr.groupe3.model;
 
-import fr.ldnr.group3.forms.HachForm;
+import fr.ldnr.groupe3.forms.HashForm;
 
 public class CoinCoin {
 
@@ -9,11 +9,11 @@ public class CoinCoin {
 		String mdp = "coincoin";
 		String adresseMail = "pj.sequi@gmail.com";
 		String hashedPassword = "";
-		HachForm hf = new HachForm();
+		HashForm hf = new HashForm();
 		
 		//essai 1
 		try {
-			 hashedPassword = hf.hach(adresseMail, mdp);
+			 hashedPassword = hf.hash(adresseMail, mdp);
 		} catch (Exception e) {
 			System.out.println("Erreur lors du hash : " + e);
 		}
@@ -23,7 +23,7 @@ public class CoinCoin {
 		
 		//essai identique
 		try {
-			 hashedPassword = hf.hach(adresseMail, mdp);
+			 hashedPassword = hf.hash(adresseMail, mdp);
 		} catch (Exception e) {
 			System.out.println("Erreur lors du hash : " + e);
 		}
@@ -35,7 +35,7 @@ public class CoinCoin {
 		//essai different
 		mdp = "coincoi";
 		try {
-			 hashedPassword = hf.hach(adresseMail, mdp);
+			 hashedPassword = hf.hash(adresseMail, mdp);
 		} catch (Exception e) {
 			System.out.println("Erreur lors du hash : " + e);
 		}
