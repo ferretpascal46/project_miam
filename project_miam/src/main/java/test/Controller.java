@@ -13,15 +13,9 @@ import fr.ldnr.groupe3.beans.Utilisateur;
 public class Controller {
 	
 	private DAOManager daoManager;
-	private Scanner scanner;
-	private DateFormat dateFormat;
-	private static final String DATE_FORMAT = "dd-MM-yyyy";
-
-	
+		
 	public Controller(DAOManager daoManager) {
-		this.daoManager = daoManager;
-		this.scanner = new Scanner(System.in);
-		this.dateFormat = new SimpleDateFormat(DATE_FORMAT);
+		this.daoManager = daoManager;		
 	}
 	
 	public void start() {
@@ -37,7 +31,7 @@ public class Controller {
 		} else {
 			System.out.println(" - List of users:");
 			for (Utilisateur employee : employees) {
-				employee.getAdresseMail();
+				System.out.println(employee.getAdresseMail());
 			}
 		}
 		

@@ -1,4 +1,4 @@
-package fr.ldnr.groupe3.model;
+package test;
 
 public class CoinCoin {
 
