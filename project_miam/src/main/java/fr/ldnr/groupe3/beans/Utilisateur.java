@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 public class Utilisateur implements Serializable{
 	/**
-	 * 
+	 * @author group3
+	 * @since 01/05/2020
 	 */
 	private static final long serialVersionUID = 1L;
     private int idUtilisateur;
