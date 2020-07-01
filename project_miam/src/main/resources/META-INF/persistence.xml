@@ -14,8 +14,8 @@
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/jpadb?serverTimezone=UTC" />
 			<!-- A mettre à jour -->	
-			<property name="javax.persistence.jdbc.user" value="ldnr_java" />
-			<property name="javax.persistence.jdbc.password" value="1234" />
+			<property name="javax.persistence.jdbc.user" value="Ldnrjava1" />
+			<property name="javax.persistence.jdbc.password" value="Ldnrjava1" />
 			<!-- Fin de mise à jour -->
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQLInnoDBDialect" />

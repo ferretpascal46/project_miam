@@ -1,12 +1,8 @@
 package fr.ldnr.groupe3.DAO;
 
 import java.util.List;
-import java.sql.Connection;
 
 public abstract class DAO<T> {
-
-	// Faut faire avec hibernate du coup ?
-	// protected Connection connection = MySQLConnection.getInstance();
 
 	/**
 	 * Permet de récupèrer un objet via son ID
