@@ -12,6 +12,18 @@ public class LigneCommande implements Serializable {
 	private int idLigneCommande;
 	private int idCommande;
 	private int idProduit;
+	
+	
+	public LigneCommande() {
+		
+	}
+	
+	public LigneCommande(int idLigneCommande, int idCommande, int idProduit) {
+		super();
+		this.idLigneCommande = idLigneCommande;
+		this.idCommande = idCommande;
+		this.idProduit = idProduit;
+	}
 	public int getIdLigneCommande() {
 		return idLigneCommande;
 	}
@@ -30,6 +42,13 @@ public class LigneCommande implements Serializable {
 	public void setIdProduit(int idProduit) {
 		this.idProduit = idProduit;
 	}
+
+	@Override
+	public String toString() {
+		return "LigneCommande [idLigneCommande=" + idLigneCommande + ", idCommande=" + idCommande + ", idProduit="
+				+ idProduit + "]";
+	}
+	
 	
 
 }
