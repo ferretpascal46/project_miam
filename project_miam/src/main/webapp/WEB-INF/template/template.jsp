@@ -8,6 +8,13 @@
 
 <link rel="icon" href="./include/images/favicon.ico">
 <link rel="shortcut icon" href="./include/images/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ 
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
 
 
 <c:forTokens items="${param.cssFiles}" delims="|" var="cssFile">
