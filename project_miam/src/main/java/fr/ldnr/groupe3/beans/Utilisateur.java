@@ -7,19 +7,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import fr.ldnr.groupe3.pourlesEnum.Role;
+
 @Entity
 public class Utilisateur implements Serializable{
 	/**
 	 * @author group3
-	 * @since 01/05/2020
+	 * @since 01/07/2020
 	 */
 	private static final long serialVersionUID = 1L;
+	// @Enumerated(EnumType.ORDINAL) // Optional, ORDINAL est la valeur par défauts, 0 pour le gérant, 1 pour les clients
+		private Role role;
+	
 	@Id     
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUtilisateur;
     private String adresseMail;
     private String motDePasse;
-    private int role;
     
     public Utilisateur() {
     }
