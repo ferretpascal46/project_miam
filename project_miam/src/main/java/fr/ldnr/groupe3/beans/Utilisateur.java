@@ -3,6 +3,8 @@ package fr.ldnr.groupe3.beans;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,19 +18,21 @@ public class Utilisateur implements Serializable{
 	 * @since 01/07/2020
 	 */
 	private static final long serialVersionUID = 1L;
-	// @Enumerated(EnumType.ORDINAL) // Optional, ORDINAL est la valeur par défauts, 0 pour le gérant, 1 pour les clients
-		private Role role;
 	
 	@Id     
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUtilisateur;
     private String adresseMail;
     private String motDePasse;
-    
+	
+	@Enumerated(EnumType.STRING)
+	// Optional, ORDINAL est la valeur par défauts, 0 pour le gérant, 1 pour les clients
+	private Role role;
+
     public Utilisateur() {
     }
     
-	public Utilisateur(String adresseMail, String motDePasse, int role) {
+	public Utilisateur(String adresseMail, String motDePasse, Role role) {
 		super();		
 		this.adresseMail = adresseMail;
 		this.motDePasse = motDePasse;
@@ -59,11 +63,11 @@ public class Utilisateur implements Serializable{
 		this.motDePasse = motDePasse;
 	}
 
-	public int getRole() {
+	public Role getRole() {
 		return role;
 	}
 
-	public void setRole(int role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 	
