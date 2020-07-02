@@ -15,16 +15,16 @@ import fr.ldnr.groupe3.beans.Client;
 import fr.ldnr.groupe3.beans.Utilisateur;
 
 /**
- * Servlet implementation class InscriptionServlet
+ * Servlet implementation class Connexion
  */
 @WebServlet("/connexionForm")
-public class ConnexionForm extends HttpServlet {
+public class ConnexionFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConnexionForm() {
+    public ConnexionFormServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +32,7 @@ public class ConnexionForm extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    private static final String VUE = "/WEB-INF/connexionFormContent.jsp";
+    private static final String VUE = "/WEB-INF/connexionForm.jsp";
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	//	response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -81,4 +81,4 @@ public class ConnexionForm extends HttpServlet {
        
 	}
 
-}
+
