@@ -18,7 +18,7 @@ public class Commande implements Serializable {
 	
 	/**
 	 * @author groupe3
-	 * @since 01/05/2020
+	 * @since 01/07/2020
 	 */
 	private static final long serialVersionUID = -5905058943327431061L;
 	@Id     

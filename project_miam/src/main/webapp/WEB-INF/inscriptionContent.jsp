@@ -1,6 +1,6 @@
  	<!-- main -->
 	 	<div class="main-w3layouts wrapper">
-		<h1>Connexion</h1>
+		<h1>Inscription</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form action="#" method="post">

@@ -16,7 +16,7 @@ public class Produit implements Serializable {
  
 	/**
 	 * @author groupe3
-	 * @since 01/05/2020
+	 * @since 01/07/2020
 	 */
 	private static final long serialVersionUID = -1586713427333743572L;
 	@Id     

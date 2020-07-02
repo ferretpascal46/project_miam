@@ -18,9 +18,8 @@ public class UtilisateurDAO {
 		this.emf = emf;
 	}
 	
-	public int create(String adresseMail, String motDePasse, Role role) {
+	public int create(Utilisateur user) {
 
-		Utilisateur user = new Utilisateur(adresseMail, motDePasse, role);
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(user);

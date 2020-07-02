@@ -13,7 +13,7 @@ public class LigneCommande implements Serializable {
 	
 	/**
 	 * @author group3
-	 * @since 01/05/2020
+	 * @since 01/07/2020
 	 */
 	private static final long serialVersionUID = 3007242006489287847L;
 	@Id     
