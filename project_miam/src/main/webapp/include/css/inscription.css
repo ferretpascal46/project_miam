@@ -141,7 +141,7 @@ h1 {
   padding: 3em;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"],input[type="tel"], input[type="email"], input[type="password"], input[type="number"] {
   font-size: 0.9em;
   color: #fff;
   font-weight: 100;
@@ -161,7 +161,7 @@ input[type="text"], input[type="email"], input[type="password"] {
   font-family: 'Roboto', sans-serif;
 }
 
-input.email, input.text.w3lpass {
+input.email, input.tel , input.number, input.text.w3lpass {
   margin: 2em 0;
 }
 

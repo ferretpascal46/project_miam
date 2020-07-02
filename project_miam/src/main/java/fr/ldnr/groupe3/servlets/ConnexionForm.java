@@ -17,14 +17,14 @@ import fr.ldnr.groupe3.beans.Utilisateur;
 /**
  * Servlet implementation class InscriptionServlet
  */
-@WebServlet("/inscription")
-public class InscriptionServlet extends HttpServlet {
+@WebServlet("/connexionForm")
+public class ConnexionForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InscriptionServlet() {
+    public ConnexionForm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,7 +32,7 @@ public class InscriptionServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    private static final String VUE = "/WEB-INF/inscription.jsp";
+    private static final String VUE = "/WEB-INF/connexionFormContent.jsp";
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	//	response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -50,35 +50,28 @@ public class InscriptionServlet extends HttpServlet {
 		// recupération des données du formulaire
         String nomUser = request.getParameter("nomUser");
         String prenom = request.getParameter("prenomUser");
-        int numRue = Integer. parseInt(request. getParameter("numRue"));
-        String rue = request.getParameter("rue");
-        String complementAdresse = request.getParameter("complementAdresse");
-        int codePostale = Integer.parseInt(request.getParameter("codePostale"));
-        String Ville = request.getParameter("Ville");
-        String tel = request.getParameter("tel");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String formSoumis = request.getParameter("SIGNUP");
-        
-        if(formSoumis!= null) {
-        	
+      
        
-        Utilisateur newUser = new Utilisateur(email, password, Role.CLIENT);
-        	 
-      Client newClient = new Client();
-      newClient.setIdUtilisateur(newUser.getIdUtilisateur());
-      newClient.setNom(nomUser);
-      newClient.setPrenom(prenom);
-      newClient.setNumeroRue(numRue);
-      newClient.setRue(rue);
-      newClient.setComplement(complementAdresse);
-      newClient.setCodePostal(codePostale);
-      newClient.setVille(Ville);
-     
-      /*
-       * @TODO  Voir avec PJ pourquoi on ne réussi pas à appeler l'Utilsareur DAO
-       */
-      UtilisateurDAO.this.create(newUser);
+        /*
+         * @TODO Vérifier qule schamps ne sont pas vides
+         * 
+         * Appeler la métode find en parm user et mot de pass de la DAO puis verfier que l'user existe bien
+         * 
+         * Si oui  suivant*/
+         
+        /*  if (user != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
+                destPage = "connexionForm.jsp";
+            } else {
+                String message = "Invalid email/password";
+                request.setAttribute("message", message);
+            }
+             
+            RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+            dispatcher.forward(request, response);
+         */
+        
       
         }	  
       

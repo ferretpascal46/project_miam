@@ -12,12 +12,12 @@ import fr.ldnr.groupe3.beans.Utilisateur;
 //public class UtilisateurDAO extends DAO<Utilisateur>{
 public class UtilisateurDAO {
 
-	private EntityManagerFactory emf;	
-	
+	private EntityManagerFactory emf;
+
 	public UtilisateurDAO(EntityManagerFactory emf) {
 		this.emf = emf;
 	}
-	
+
 	public int create(Utilisateur user) {
 
 		EntityManager em = emf.createEntityManager();
@@ -37,29 +37,31 @@ public class UtilisateurDAO {
 			user.setAdresseMail(adresseMail);
 			user.setMotDePasse(motDePasse);
 			user.setRole(role);
-		} 
+		}
 		em.getTransaction().commit();
 		em.close();
 		return (user != null);
 	}
 
-	
 	public Utilisateur delete(int idUtilisateur) {
-		
-		EntityManager em = emf.createEntityManager();		
+
+		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
-		
-		Utilisateur user = em.find(Utilisateur.class, idUtilisateur);		
+
+		Utilisateur user = em.find(Utilisateur.class, idUtilisateur);
 		if (user != null) {
 			em.remove(user);
 		}
-		
-		em.getTransaction().commit();
-		em.close();		
-		return user;	
-	}
 
-	
+		em.getTransaction().commit();
+		em.close();
+		return user;
+	}
+	     
+ 
+
+
+
 	public List<Utilisateur> list() {
 		EntityManager em = emf.createEntityManager();
 
@@ -69,5 +71,5 @@ public class UtilisateurDAO {
 		em.close();
 		return result;
 	}
-	
+
 }
