@@ -2,6 +2,17 @@ package fr.ldnr.groupe3.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import fr.ldnr.groupe3.Enum.StatusCommande;
+import fr.ldnr.groupe3.Enum.TypeDeCommande;
+
+@Entity
 public class Commande implements Serializable {
 	
 	/**
@@ -9,10 +20,14 @@ public class Commande implements Serializable {
 	 * @since 01/05/2020
 	 */
 	private static final long serialVersionUID = -5905058943327431061L;
+	@Id     
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCommande;
 	private int idClient;
-	private int StatusCommande;
-	private int typeCommande;
+	@Enumerated(EnumType.ORDINAL)
+	private StatusCommande statusCommande;
+	@Enumerated(EnumType.ORDINAL)
+	private TypeDeCommande typeCommande;
 	
 	
 	
@@ -20,13 +35,15 @@ public class Commande implements Serializable {
 		
 	}
 
-	public Commande(int idCommande, int idClient, int statusCommande, int typeCommande) {
+	public Commande(int idCommande, int idClient, StatusCommande status, TypeDeCommande type) {
 		super();
 		this.idCommande = idCommande;
 		this.idClient = idClient;
-		StatusCommande = statusCommande;
-		this.typeCommande = typeCommande;
+		this.statusCommande = status;
+		this.typeCommande = type;
 	}
+
+	
 
 	public int getIdCommande() {
 		return idCommande;
@@ -44,25 +61,29 @@ public class Commande implements Serializable {
 		this.idClient = idClient;
 	}
 
-	public int getStatusCommande() {
-		return StatusCommande;
+	public StatusCommande getStatusCommande() {
+		return statusCommande;
 	}
 
-	public void setStatusCommande(int statusCommande) {
-		StatusCommande = statusCommande;
+	public void setStatusCommande(StatusCommande statusCommande) {
+		this.statusCommande = statusCommande;
 	}
 
-	public int getTypeCommande() {
+	public TypeDeCommande getTypeCommande() {
 		return typeCommande;
 	}
 
-	public void setTypeCommande(int typeCommande) {
+	public void setTypeCommande(TypeDeCommande typeCommande) {
 		this.typeCommande = typeCommande;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
 	public String toString() {
-		return "Commande [idCommande=" + idCommande + ", idClient=" + idClient + ", StatusCommande=" + StatusCommande
+		return "Commande [idCommande=" + idCommande + ", idClient=" + idClient + ", StatusCommande=" + statusCommande
 				+ ", typeCommande=" + typeCommande + "]";
 	}
 	

@@ -4,9 +4,9 @@ import java.sql.Date;
 import java.util.List;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
+import fr.ldnr.groupe3.Enum.Role;
 import fr.ldnr.groupe3.beans.Client;
 import fr.ldnr.groupe3.beans.Utilisateur;
-import fr.ldnr.groupe3.pourlesEnum.Role;
 
 
 

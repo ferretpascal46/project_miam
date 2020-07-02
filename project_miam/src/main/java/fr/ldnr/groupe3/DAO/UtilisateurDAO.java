@@ -6,8 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 
+import fr.ldnr.groupe3.Enum.Role;
 import fr.ldnr.groupe3.beans.Utilisateur;
-import fr.ldnr.groupe3.pourlesEnum.Role;
 
 //public class UtilisateurDAO extends DAO<Utilisateur>{
 public class UtilisateurDAO {

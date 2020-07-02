@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import fr.ldnr.groupe3.pourlesEnum.Role;
+import fr.ldnr.groupe3.Enum.Role;
 
 @Entity
 public class Utilisateur implements Serializable{

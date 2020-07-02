@@ -2,6 +2,12 @@ package fr.ldnr.groupe3.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class LigneCommande implements Serializable {
 	
 	/**
@@ -9,6 +15,8 @@ public class LigneCommande implements Serializable {
 	 * @since 01/05/2020
 	 */
 	private static final long serialVersionUID = 3007242006489287847L;
+	@Id     
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idLigneCommande;
 	private int idCommande;
 	private int idProduit;
