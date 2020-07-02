@@ -4,4 +4,11 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     version="3.0">
     <display-name>Servlet 3.0 Web Application</display-name>
+    <jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+		<include-prelude>/WEB-INF/template/taglibs.jsp</include-prelude>
+	</jsp-property-group>
+	</jsp-config>
+	
 </web-app>

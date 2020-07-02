@@ -1,17 +1,3 @@
-
-<div class="slider-relative">
-	<div class="slider-block">
-		<div class="slider">
-			<ul class="items">
-				<li><img src="./include/images/slide.jpg" alt=""></li>
-				<li><img src="./include/images/slide1.jpg" alt=""></li>
-				<li class="mb0"><img src="images/slide2.jpg" alt=""></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<!--=======content================================-->
-
 <div class="content page1">
 	<div class="ic">More Website Templates @ TemplateMonster.com -
 		May 13, 2013!</div>
@@ -108,12 +94,12 @@
 				</div>
 				<nav>
 					<ul>
-						<li class="current"><a href="index.html">Home</a></li>
-						<li><a href="./include/index-1.html">About Us</a></li>
-						<li><a href="./include/index-2.html">Menu</a></li>
-						<li><a href="./include/index-3.html">Portfolio</a></li>
-						<li><a href="./include/index-4.html">News </a></li>
-						<li><a href="./include/index-5.html">Contacts</a></li>
+						<li class="current"><a href="index.jsp">Home</a></li>
+						<li><a href="/WEB-INF/index_1.jsp">About Us</a></li>
+						<li><a href="/WEB-INF/index_2.jsp">Menu</a></li>
+						<li><a href="/WEB-INF/index_3.jsp">Portfolio</a></li>
+						<li><a href="/WEB-INF/index_4.jsp">News </a></li>
+						<li><a href="/WEB-INF/index_5.jsp">Contacts</a></li>
 					</ul>
 				</nav>
 			</div>

@@ -1,4 +1,4 @@
-package fr.ldnr.groupe3;
+package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class InscriptionServlet
  */
-@WebServlet("/InscriptionServlet")
+@WebServlet("/Inscription")
 public class InscriptionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

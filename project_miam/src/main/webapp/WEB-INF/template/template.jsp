@@ -1,33 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%><!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
-<title></title>
-<meta charset="utf-8">
+<title>${param.title}</title>
 
 <link rel="icon" href="./include/images/favicon.ico">
 <link rel="shortcut icon" href="./include/images/favicon.ico" />
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
- 
+
+
 <!-- web font -->
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link
+	href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i"
+	rel="stylesheet">
 <!-- //web font -->
 
 
 <c:forTokens items="${param.cssFiles}" delims="|" var="cssFile">
 	<link rel="stylesheet"
-		href="<c:url value="./include/css/${cssFile}.css" />" />
+		href='<c:url value="./include/css/${cssFile}.css" />' />
 </c:forTokens>
 
 <c:forTokens items="${param.jsFiles}" delims="|" var="cssFile">
 	<link rel="stylesheet"
-		href="<c:url value="./include/js/${jsFiles}.js" />" />
+		href='<c:url value="./include/js/${jsFiles}.js" />' />
 </c:forTokens>
 
-
+<script type="application/x-javascript">
+	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+</script>
 <script>
 	$(window).load(function() {
 		$('.slider')._TMS({

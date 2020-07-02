@@ -1,8 +1,6 @@
 package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,18 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class index
+ * Servlet implementation class Index_2
  */
-@WebServlet(name = "Connexion", urlPatterns = { "/index" })
-public class index extends HttpServlet {
+@WebServlet(name = "index2", urlPatterns = { "/index_2" })
+public class Index_2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	private static final String VUE = "/WEB-INF/index.jsp";
+	private static final String VUE = "/WEB-INF/index_2.jsp";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public index() {
+	public Index_2() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -32,10 +29,8 @@ public class index extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-
-			this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
-		
+		// TODO Auto-generated method stub
+		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
 	/**
