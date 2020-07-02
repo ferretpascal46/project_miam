@@ -8,14 +8,20 @@
 
 	<persistence-unit name="my-pu">
 		<class>fr.ldnr.groupe3.beans.Utilisateur </class>
-		<properties>		
+		<class>fr.ldnr.groupe3.beans.Client </class>
+		<class>fr.ldnr.groupe3.beans.Commande </class>
+		<class>fr.ldnr.groupe3.beans.LigneCommande </class>
+		<class>fr.ldnr.groupe3.beans.Produit </class>
+		<properties>
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/project_miam_miam?serverTimezone=UTC" />
-			<!-- A mettre à jour -->	
-			<property name="javax.persistence.jdbc.user" value="Ldnrjava1" />
-			<property name="javax.persistence.jdbc.password" value="Ldnrjava1" />
+			<!-- A mettre à jour -->
+			<property name="javax.persistence.jdbc.user"
+				value="Ldnrjava1" />
+			<property name="javax.persistence.jdbc.password"
+				value="Ldnrjava1" />
 			<!-- Fin de mise à jour -->
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQLInnoDBDialect" />
@@ -23,5 +29,5 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
-	
+
 </persistence> 
