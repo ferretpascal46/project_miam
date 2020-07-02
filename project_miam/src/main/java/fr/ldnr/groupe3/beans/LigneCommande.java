@@ -2,6 +2,7 @@ package fr.ldnr.groupe3.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +19,9 @@ public class LigneCommande implements Serializable {
 	@Id     
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idLigneCommande;
+	@Column(name="fk_idCommande")
 	private int idCommande;
+	@Column(name="fk_idProduit")
 	private int idProduit;
 	
 	
@@ -26,9 +29,8 @@ public class LigneCommande implements Serializable {
 		
 	}
 	
-	public LigneCommande(int idLigneCommande, int idCommande, int idProduit) {
+	public LigneCommande(int idCommande, int idProduit) {
 		super();
-		this.idLigneCommande = idLigneCommande;
 		this.idCommande = idCommande;
 		this.idProduit = idProduit;
 	}

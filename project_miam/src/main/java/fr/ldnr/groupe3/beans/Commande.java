@@ -2,6 +2,7 @@ package fr.ldnr.groupe3.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -23,11 +24,12 @@ public class Commande implements Serializable {
 	@Id     
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCommande;
+	@Column(name="fk_idClient")
 	private int idClient;
 	@Enumerated(EnumType.ORDINAL)
 	private StatusCommande statusCommande;
 	@Enumerated(EnumType.ORDINAL)
-	private TypeDeCommande typeCommande;
+	private TypeDeCommande typeDeCommande;
 	
 	
 	
@@ -35,12 +37,11 @@ public class Commande implements Serializable {
 		
 	}
 
-	public Commande(int idCommande, int idClient, StatusCommande status, TypeDeCommande type) {
+	public Commande(int idClient, StatusCommande status, TypeDeCommande type) {
 		super();
-		this.idCommande = idCommande;
 		this.idClient = idClient;
 		this.statusCommande = status;
-		this.typeCommande = type;
+		this.typeDeCommande = type;
 	}
 
 	
@@ -70,11 +71,11 @@ public class Commande implements Serializable {
 	}
 
 	public TypeDeCommande getTypeCommande() {
-		return typeCommande;
+		return typeDeCommande;
 	}
 
 	public void setTypeCommande(TypeDeCommande typeCommande) {
-		this.typeCommande = typeCommande;
+		this.typeDeCommande = typeCommande;
 	}
 
 	public static long getSerialversionuid() {
@@ -84,7 +85,7 @@ public class Commande implements Serializable {
 	@Override
 	public String toString() {
 		return "Commande [idCommande=" + idCommande + ", idClient=" + idClient + ", StatusCommande=" + statusCommande
-				+ ", typeCommande=" + typeCommande + "]";
+				+ ", typeCommande=" + typeDeCommande + "]";
 	}
 	
 

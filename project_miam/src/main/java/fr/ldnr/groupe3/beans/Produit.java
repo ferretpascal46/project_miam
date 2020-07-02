@@ -31,35 +31,41 @@ public class Produit implements Serializable {
 		
 	}
 	
-	public Produit(int idProduit, String nomProduit, TypeProduit type, Double prix) {
+	public Produit(String nomProduit, TypeProduit type, Double prix) {
 		super();
-		this.idProduit = idProduit;
 		this.nomProduit = nomProduit;
 		this.typeProduit = type;
 		this.prix = prix;
 	}
+	
 	public int getIdProduit() {
-		
 		return idProduit;
 	}
+
 	public void setIdProduit(int idProduit) {
 		this.idProduit = idProduit;
 	}
-	public String getLibelle() {
+
+	public String getNomProduit() {
 		return nomProduit;
 	}
-	public void setLibelle(String libelle) {
-		this.nomProduit = libelle;
+
+	public void setNomProduit(String nomProduit) {
+		this.nomProduit = nomProduit;
 	}
-	public TypeProduit getType() {
+
+	public TypeProduit getTypeProduit() {
 		return typeProduit;
 	}
-	public void setType(TypeProduit type) {
-		this.typeProduit = type;
+
+	public void setTypeProduit(TypeProduit typeProduit) {
+		this.typeProduit = typeProduit;
 	}
+
 	public Double getPrix() {
 		return prix;
 	}
+
 	public void setPrix(Double prix) {
 		this.prix = prix;
 	}

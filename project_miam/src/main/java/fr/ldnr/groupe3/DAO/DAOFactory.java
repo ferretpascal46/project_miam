@@ -12,4 +12,17 @@ public class DAOFactory {
 	public static ClientDAO getClientDAO(EntityManagerFactory emf) {
 		return new ClientDAO(emf);
 	}
+	
+	public static CommandeDAO getCommandeDAO(EntityManagerFactory emf) {
+		return new CommandeDAO(emf);
+	}
+	
+	public static ProduitDAO getProduitDAO(EntityManagerFactory emf) {
+		return new ProduitDAO(emf);
+	}
+	
+	public static LigneCommandeDAO getLignCommandeDAO(EntityManagerFactory emf) {
+		return new LigneCommandeDAO(emf);
+	}
+	
 }
