@@ -7,9 +7,9 @@ public class DAOFactory {
 	
 	public static UtilisateurDAO getUtilisateurDAO(EntityManagerFactory emf) {
 		return new UtilisateurDAO(emf);
-	}/*
+	}
 
-	public static PostDAO getPostDAO() {
-		return new PostDAO();
-	}*/
+	public static ClientDAO getClientDAO(EntityManagerFactory emf) {
+		return new ClientDAO(emf);
+	}
 }

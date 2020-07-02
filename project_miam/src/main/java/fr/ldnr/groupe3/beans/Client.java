@@ -1,8 +1,15 @@
 package fr.ldnr.groupe3.beans;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
 public class Client implements Serializable {
 
 	/**
@@ -11,6 +18,9 @@ public class Client implements Serializable {
 	// Les propriétés du bean : elles correspondent aux champs de la base de données 
 	*/
 	private static final long serialVersionUID = 4727646321130165006L;
+	
+	@Id
+	@Column(name="fk_idUtilisateur")
 	private int idUtilisateur;
 	private String nom;
 	private String prenom;
@@ -20,6 +30,7 @@ public class Client implements Serializable {
 	private int codePostal;
 	private String ville;
 	private String telephone;
+	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	
 	 public Client() {

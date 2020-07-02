@@ -17,7 +17,7 @@ public class HashForm {
 	            // digest() method is called 
 	            // to calculate message digest of the input string 
 	            // returned as array of byte 
-	            byte[] messageDigest = md.digest(password.getBytes()); 
+	            byte[] messageDigest = md.digest(passWord.getBytes()); 
 	  
 	            // Convert byte array into signum representation 
 	            BigInteger no = new BigInteger(1, messageDigest); 

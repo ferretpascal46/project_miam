@@ -25,7 +25,7 @@ public class Utilisateur implements Serializable{
     private String adresseMail;
     private String motDePasse;
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	// Optional, ORDINAL est la valeur par défauts, 0 pour le gérant, 1 pour les clients
 	private Role role;
 
@@ -35,7 +35,7 @@ public class Utilisateur implements Serializable{
 	public Utilisateur(String adresseMail, String motDePasse, Role role) {
 		super();		
 		this.adresseMail = adresseMail;
-		this.motDePasse = motDePasse;
+		this.motDePasse = motDePasse;		
 		this.role = role;
 	}
 

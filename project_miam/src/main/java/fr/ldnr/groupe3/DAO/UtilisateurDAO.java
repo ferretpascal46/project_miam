@@ -7,17 +7,18 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 
 import fr.ldnr.groupe3.beans.Utilisateur;
+import fr.ldnr.groupe3.pourlesEnum.Role;
 
 //public class UtilisateurDAO extends DAO<Utilisateur>{
 public class UtilisateurDAO {
 
-	private EntityManagerFactory emf;
-
+	private EntityManagerFactory emf;	
+	
 	public UtilisateurDAO(EntityManagerFactory emf) {
 		this.emf = emf;
 	}
 	
-	public void create(String adresseMail, String motDePasse, int role) {
+	public int create(String adresseMail, String motDePasse, Role role) {
 
 		Utilisateur user = new Utilisateur(adresseMail, motDePasse, role);
 		EntityManager em = emf.createEntityManager();
@@ -25,10 +26,10 @@ public class UtilisateurDAO {
 		em.persist(user);
 		em.getTransaction().commit();
 		em.close();
-		
+		return user.getIdUtilisateur();
 	}
 
-	public boolean update(int idUtilisateur, String adresseMail, String motDePasse, int role) {
+	public boolean update(int idUtilisateur, String adresseMail, String motDePasse, Role role) {
 
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
@@ -69,5 +70,5 @@ public class UtilisateurDAO {
 		em.close();
 		return result;
 	}
-
+	
 }
