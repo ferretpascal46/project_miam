@@ -22,7 +22,7 @@
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="Inscription">
+					<input type="submit" value="formSoumis">
 				</form>
 				<p>Vous avez un compte ? <a href="#">Connectez vous</a></p>
 			</div>
