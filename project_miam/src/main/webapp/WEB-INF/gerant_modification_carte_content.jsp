@@ -1,46 +1,60 @@
 <h1>Bienvenue dans la modification de votre carte</h1>
-<p>
-<span class="col2">Pour ajouter un plat ou une boisson</span><br>
-<form method="POST" action="<c:url value="produit" />">
-    <fieldset>
-        <legend>Ajouter un plat:</legend><br>
-          <label for="nomProduit">Nom du plat </label>
-        <input type="text" id="nomProduit" name="nomProduit" value="<c:out value="${requestScope.produit.nomProduit}" />" size="20" maxlength="60" />
-  <label for="prix">Prix du plat </label>
-        <input type="text" id="prix" name="prix" value="<c:out value="${requestScope.produit.prix}" />" size="20" maxlength="60" />
-</fieldset>   
-<br/>
-<fieldset>
-        <legend>Ajouter une boisson:</legend><br>
-          <label for="nomProduit">Nom de la boisson </label>
-        <input type="text" id="nomProduit" name="nomProduit" value="<c:out value="${requestScope.produit.nomProduit}" />" size="20" maxlength="60" />
-<label for="prix">Prix de la boisson </label>
-        <input type="text" id="prix" name="prix" value="<c:out value="${requestScope.produit.prix}" />" size="20" maxlength="60" />
-</fieldset>      
-</form>    
- <input type="submit" value="Ajouter" class="sansLabel" />
-</p>
-<p>
-<span class="col2">Liste des plats proposés</span> <br>
+
+<form method="POST" action="modification_carte" />
 <table>
-<tr>
-<td>Plat:</td>
-<td><a href="#">${nomProduit}</a></td>
-<td>Prix:</td>
-<td><a href="#">${prix}</a></td>
-<td><input type="button" value="Modifier"></td>
-<td><input type="button" value="Supprimer"></td>
-</tr>
+	<tr>
+		<th>Ajouter un plat</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td><label for="nomProduit"> Nom du plat </label></td>
+		<td><input type="text" id="nomProduit" name="nomProduit"
+			size="20" maxlength="60" /></td>
+		<td><label for="prixProduit">Prix du plat </label></td>
+		<td><input type="text" id="prixProduit" name="prixProduit"
+			size="20" maxlength="60" /></td>
+	</tr>
+	<tr>
+		<th>Ajouter une boisson</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td><label for="nomBoisson">Nom de la boisson </label></td>
+		<td><input type="text" id="nomBoisson" name="nomBoisson"
+			size="20" maxlength="60" /></td>
+		<td><label for="prixBoisson">Prix de la boisson </label></td>
+		<td><input type="text" id="prixBoisson" name="prixBoisson"
+			size="20" maxlength="60" /></td>
+	</tr>
 </table>
-<span class="col2">Liste des boissons proposées</span>
+
+<br />
+
+<input type="submit" value="Ajouter" />
+<br>
+<br>
+<br>
+<br>
+<h2>Liste des plats et boissons proposés</h2>
+
 <table>
-<tr>
-<td>Boisson:</td>
-<td><a href="#">${nomProduit}</a></td>
-<td>Prix:</td>
-<td><a href="#">${prix}</a></td>
-<td><input type="button" value="Modifier"></td>
-<td><input type="button" value="Supprimer"></td>
-</tr>
+	<tr>
+
+		<th>Plat</th>
+		<th>Prix</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<c:forEach items="${requestScope.produits}" var="produit">
+		<tr>
+			<td>${produit.getNomProduit() }</td>
+			<td>${produit.getPrix() }</td>
+			<td><input type="button" value="Modifier"></td>
+			<td><input type="button" value="Supprimer"></td>
+		<tr>
+	</c:forEach>
 </table>
-</p>
