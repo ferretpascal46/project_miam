@@ -16,9 +16,10 @@ public class ProduitDAO {
 		this.emf = emf;
 	}
 
-	public void create(String nomProduit, TypeProduit type, Double prix) {
-
-		Produit produit = new Produit(nomProduit, type, prix);
+	
+	//prend en paramètres un objet produit pour le créer dans le BDD
+	//necessite un Produit avec les attributs String nomProduit, TypeProduit type, Double prix
+	public void create(Produit produit) {		
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(produit);
@@ -26,6 +27,7 @@ public class ProduitDAO {
 		em.close();
 	}
 
+	// retourne un boolean donnant le résutat si (user != null)
 	public boolean update(int id, String nomProduit, TypeProduit type, Double prix) {
 
 		EntityManager em = emf.createEntityManager();
@@ -43,21 +45,23 @@ public class ProduitDAO {
 	}
 
 	
-	public Produit delete(int id) {
+	// retourne un boolean donnant le résutat si (user != null)
+	public boolean delete(int id) {
 
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 
-		Produit user = em.find(Produit.class, id);
-		if (user != null) {
-			em.remove(user);
+		Produit produit = em.find(Produit.class, id);
+		if (produit != null) {
+			em.remove(produit);
 		}
 		em.getTransaction().commit();
 		em.close();
-		return user;
+		return (produit != null);
 	}
 
-	
+	//liste les Produit
+	//retourne une liste
 	public List<Produit> list() {
 		EntityManager em = emf.createEntityManager();
 

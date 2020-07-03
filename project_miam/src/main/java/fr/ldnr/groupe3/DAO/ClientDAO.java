@@ -16,11 +16,11 @@ public class ClientDAO {
 		this.emf = emf;
 	}
 			
-	public void create(int id, String nom, String prenom, int numeroRue, String rue, String complement,
-			int codePostal, String ville, String telephone, Date dateCreation ) {		
-		
-		Client client = new Client(id, nom, prenom, numeroRue, rue, complement, codePostal, ville, 
-				telephone, dateCreation);
+	//prend en paramètres un objet Client pour le créer dans le BDD
+	//necessite un Client avec les attributs int idClient, String nom, String prenom, int numeroRue, String rue, 
+	//String complement, int codePostal, String ville, String telephone, Date dateCreation
+	public void create(Client client) {		
+
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(client);
@@ -28,6 +28,7 @@ public class ClientDAO {
 		em.close();		
 	}
 	
+	// retourne un boolean donnant le résutat si (user != null)
 	public boolean update(int id, String nom, String prenom, int numeroRue, String rue, String complement, int codePostal, 
 			String ville, String telephone, Date dateCreation ) {
 
@@ -66,6 +67,8 @@ public class ClientDAO {
 	}*/
 
 	
+	//liste chaque clients de la BDD
+	//retourne une liste
 	public List<Client> list() {
 		EntityManager em = emf.createEntityManager();
 

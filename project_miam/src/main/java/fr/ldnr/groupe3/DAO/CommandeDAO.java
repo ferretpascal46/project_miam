@@ -19,8 +19,10 @@ public class CommandeDAO {
 		this.emf = emf;
 	}
 
-	public int create(int FK_idClient, StatusCommande status, TypeDeCommande type) {
-		Commande commande = new Commande(FK_idClient, status, type);
+	//prend en paramètres un objet Commande pour le créer dans le BDD
+	//retourne l'idCommande créé pour être réutilisé lors de la création des LigneCommande
+	//necessite un Commande avec les attributs int FK_idClient, StatusCommande status, TypeDeCommande type
+	public int create(Commande commande) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(commande);
@@ -29,6 +31,7 @@ public class CommandeDAO {
 		return commande.getIdCommande();
 	}
 
+	// retourne un boolean donnant le résutat si (user != null)
 	public boolean update(int idCommande, StatusCommande statusCommande, TypeDeCommande typeCommande) {
 
 		EntityManager em = emf.createEntityManager();
@@ -43,21 +46,24 @@ public class CommandeDAO {
 		return (commande != null);
 	}
 
-	public Commande delete(int idCommande) {
+	// retourne un boolean donnant le résutat si (user != null)
+	public boolean delete(int idCommande) {
 
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		
-		Commande user = em.find(Commande.class, idCommande);
-		if (user != null) {
-			em.remove(user);
+		Commande commande = em.find(Commande.class, idCommande);
+		if (commande != null) {
+			em.remove(commande);
 		}
 		em.getTransaction().commit();
 		em.close();
-		return user;
+		return (commande != null);
 	}
 
 	
+	//liste les Commandes
+	//retourne une liste
 	public List<Commande> list() {
 		EntityManager em = emf.createEntityManager();
 		TypedQuery<Commande> query = em.createQuery("SELECT c FROM Commande c", Commande.class);

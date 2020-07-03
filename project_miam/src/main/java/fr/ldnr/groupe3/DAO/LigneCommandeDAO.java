@@ -15,8 +15,10 @@ public class LigneCommandeDAO {
 		this.emf = emf;
 	}
 
-	public void create(int idCommande, int idProduit) {
-		LigneCommande lc = new LigneCommande(idCommande, idProduit);
+	
+	//prend en paramètres un objet LigneCommande pour le créer dans le BDD
+	//necessite un LigneCommande avec les attributs int idCommande, int idProduit
+	public void create(LigneCommande lc) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(lc);
@@ -24,6 +26,8 @@ public class LigneCommandeDAO {
 		em.close();
 	}
 
+	//liste chaque lignes de commandes de la BDD
+	//retourne une liste
 	public List<LigneCommande> list() {
 		EntityManager em = emf.createEntityManager();
 		TypedQuery<LigneCommande> query = em.createQuery("SELECT lc FROM Produit lc", LigneCommande.class);
