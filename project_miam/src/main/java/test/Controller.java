@@ -1,11 +1,12 @@
 package test;
 
-import java.sql.Date;
-import java.util.List;
+import java.security.NoSuchAlgorithmException;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
-import fr.ldnr.groupe3.Enum.*;
-import fr.ldnr.groupe3.beans.*;
+import fr.ldnr.groupe3.Enum.Role;
+import fr.ldnr.groupe3.beans.Client;
+import fr.ldnr.groupe3.beans.Utilisateur;
+import fr.ldnr.groupe3.forms.HashForm;
 
 public class Controller {
 
@@ -20,6 +21,43 @@ public class Controller {
 		this.daoManager.start();
 		
 
+		String email = "emailTest";
+		String password = "passwordTest";
+
+		
+		int newIdUtiliateur = 0;
+		try {
+			Utilisateur newUser = new Utilisateur(email, HashForm.hash(email, password), Role.CLIENT);
+			newIdUtiliateur = this.daoManager.getUtilisateurDAO().create(newUser);
+		} catch (NoSuchAlgorithmException e) {
+			System.out.println("Probleme lors du hash : " + e);
+		}
+
+		if (newIdUtiliateur != 0) {
+			Client newClient = new Client();
+			
+			newClient.setIdUtilisateur(newIdUtiliateur);
+			newClient.setNom("nomUser");
+			newClient.setPrenom("prenom");
+			newClient.setNumeroRue(10);
+			newClient.setRue("rue");
+			newClient.setComplement("complementAdresse");
+			newClient.setCodePostal(75000);
+			newClient.setVille("Ville");
+			
+			this.daoManager.getClientDAO().create(newClient);
+		} else {
+			System.out.println("Problème lors de la création du compte utilisateur");
+		}
+		
+
+	     
+	      /*
+	       * @TODO  Voir avec PJ pourquoi on ne réussi pas à appeler l'Utilsareur DAO
+	       */
+	     
+	      
+		/*
 		// creation users
 		System.out.println("Creation de l'utilisateur pj@mail.fr");
 		int idUser1 = this.daoManager.getUtilisateurDAO().create("pj@mail.fr", "motDePasse", Role.CLIENT);
@@ -195,5 +233,7 @@ public class Controller {
 				}
 			}
 		} */
+		
+		this.daoManager.stop();
 	}
 }

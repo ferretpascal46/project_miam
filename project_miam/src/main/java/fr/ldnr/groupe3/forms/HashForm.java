@@ -5,12 +5,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class HashForm {
-	public final String salt = "Le_GrouPe_3-EST_lE plus ForT Du Monde_CoinCoin";
+	public static final String salt = "Le_GrouPe_3-EST_lE plus ForT Du Monde_CoinCoin";
 	
-	public String hash(String mail, String password) throws NoSuchAlgorithmException {
+	public static String hash(String mail, String password) throws NoSuchAlgorithmException {
 		String passWord = salt+mail+password;
-		 try { 
-			 
+		 try { 			 
 	            // getInstance() method is called with algorithm SHA-512 
 	            MessageDigest md = MessageDigest.getInstance("SHA-512"); 
 	  
@@ -35,7 +34,7 @@ public class HashForm {
 	        } 
 	  
 	        // For specifying wrong message digest algorithms 
-	        catch (NoSuchAlgorithmException e) { 
+	        catch (NoSuchAlgorithmException e) { 	        	
 	            throw new RuntimeException(e); 
 	        } 
 	}
