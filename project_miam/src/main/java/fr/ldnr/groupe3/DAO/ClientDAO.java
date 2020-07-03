@@ -65,7 +65,19 @@ public class ClientDAO {
 		em.close();		
 		return user;	
 	}*/
+	//liste chaque clients de la BDD
+	//retourne une liste
+	
+	public List<Client> listWithEmail() {
+		EntityManager em = emf.createEntityManager();
 
+		TypedQuery<Client> query = em.createQuery("SELECT  c FROM Client c  ", Client.class);
+		List<Client> result = query.getResultList();
+		
+		em.close();
+		return result;
+	}
+	
 	
 	//liste chaque clients de la BDD
 	//retourne une liste

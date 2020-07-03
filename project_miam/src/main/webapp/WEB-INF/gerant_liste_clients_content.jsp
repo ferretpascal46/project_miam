@@ -13,13 +13,13 @@ ${requestScope.toto}
 	</tr>
 	</thead>
 	<tbody>
-	<c:forEach items ="${requestScope.utilisateurs}" var="utilisateur">
+	<c:forEach items ="${requestScope.utilisateurs}" var="client">
 		<tr>
-			<td><c:out value="${requestScope.utilisateur}"/></td>
-			<td>${true && true }</td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><c:out value="${client.key.getNom() }${ client.key.getPrenom()} "/></td>
+			<td><c:out value="${client.value}"/></td>
+			<td><c:out value="${client.key.getNumeroRue()} ${ client.key.getRue()} ${ client.key.getComplement()}"/></td>
+			<td><c:out value="${client.key.getTelephone()}"/></td>
+			<td><c:out value="${client.key.getDateCreation()}"/></td>
 		</tr>
 	</c:forEach>
 	</tbody>

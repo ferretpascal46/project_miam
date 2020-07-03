@@ -1,6 +1,7 @@
 package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.mapping.Map;
+
 import fr.ldnr.groupe3.DAO.DAOManager;
+import fr.ldnr.groupe3.beans.Client;
 import fr.ldnr.groupe3.beans.Utilisateur;
 
 /**
@@ -20,13 +24,13 @@ public class listeClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static final String VUE = "/WEB-INF/gerant_liste_clients.jsp";
+	DAOManager daoManager = new DAOManager();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public listeClient() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -35,15 +39,22 @@ public class listeClient extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("toto", "bvlalball");
-		
-		DAOManager daoManager = new DAOManager();
+
 		daoManager.start();
 		List<Utilisateur> utilisateurs = daoManager.getUtilisateurDAO().list();
+		List<Client> clients = daoManager.getClientDAO().list();
+		HashMap<Client,String> hmUtilisateurs = new HashMap<Client, String>();
+		for (Utilisateur utilisateur : utilisateurs) {
+			for (Client client : clients) {
+				if(client.getIdUtilisateur() == utilisateur.getIdUtilisateur()) {
+					hmUtilisateurs.put(client, utilisateur.getAdresseMail());
+				}
+			}
+		}
 		
-		request.setAttribute("utilisateurs", "utilisateurs");
+		request.setAttribute("utilisateurs", hmUtilisateurs);
+
 		daoManager.stop();
-		request.setAttribute("toto", "bvlalball");
 
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
@@ -55,9 +66,9 @@ public class listeClient extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// display user
-		DAOManager daoManager = new DAOManager();
-		List<Utilisateur> utilisateurs = daoManager.getUtilisateurDAO().list();
-		
+
+		request.setAttribute("toto", "bvlalball");
+
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
