@@ -1,12 +1,7 @@
 package test;
 
-import java.security.NoSuchAlgorithmException;
-
 import fr.ldnr.groupe3.DAO.DAOManager;
-import fr.ldnr.groupe3.Enum.Role;
-import fr.ldnr.groupe3.beans.Client;
 import fr.ldnr.groupe3.beans.Utilisateur;
-import fr.ldnr.groupe3.forms.HashForm;
 
 public class Controller {
 
@@ -20,7 +15,11 @@ public class Controller {
 		System.out.println("## WELCOME");
 		this.daoManager.start();
 		
-
+		Utilisateur user = new Utilisateur();
+		user = this.daoManager.getUtilisateurDAO().findIdUtilisateur("p@mail.fr");		
+		System.out.println("id = " + user.getIdUtilisateur());
+		
+		/*
 		String email = "emailTest";
 		String password = "passwordTest";
 

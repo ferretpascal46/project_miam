@@ -65,6 +65,7 @@ public class UtilisateurDAO {
 
 	//liste les utilisateurs
 	//retourne une liste
+	//e.lastName= :lastName
 	public List<Utilisateur> list() {
 		EntityManager em = emf.createEntityManager();
 
@@ -73,6 +74,17 @@ public class UtilisateurDAO {
 
 		em.close();
 		return result;
+	}
+	
+	public Utilisateur findIdUtilisateur(String adresseMail) {
+		EntityManager em = emf.createEntityManager();		
+		//e.lastName= :lastName
+		TypedQuery<Utilisateur> query = em.createQuery("SELECT u FROM Utilisateur u WHERE u.adresseMail = :adresseMail", Utilisateur.class);
+		query.setParameter("adresseMail", adresseMail);
+		List<Utilisateur> result = query.getResultList();
+					
+		em.close();		
+		return result.get(0);
 	}
 
 }

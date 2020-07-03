@@ -45,8 +45,7 @@ public class ConnexionFormServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		// TODO Auto-generated method stub		
 		// recupération des données du formulaire
         String nomUser = request.getParameter("nomUser");
         String prenom = request.getParameter("prenomUser");
@@ -72,13 +71,8 @@ public class ConnexionFormServlet extends HttpServlet {
             dispatcher.forward(request, response);
          */
         
-      
+        doGet(request, response);
         }	  
-      
-         
-      
-         
-       
-	}
+    }
 
 
