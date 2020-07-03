@@ -1,14 +1,23 @@
 <h1>Bienvenue dans la modification de votre carte</h1>
 <p>
-<span class="col2">Pour ajouter un plat</span><br>
+<span class="col2">Pour ajouter un plat ou une boisson</span><br>
 <form method="POST" action="<c:url value="produit" />">
     <fieldset>
-        <legend>Ajouter un plat</legend>
-          <label for="nomProduit">Plat <span class="requis">*</span></label>
+        <legend>Ajouter un plat:</legend><br>
+          <label for="nomProduit">Nom du plat </label>
         <input type="text" id="nomProduit" name="nomProduit" value="<c:out value="${requestScope.produit.nomProduit}" />" size="20" maxlength="60" />
-</fieldset>       
+  <label for="prix">Prix du plat </label>
+        <input type="text" id="prix" name="prix" value="<c:out value="${requestScope.produit.prix}" />" size="20" maxlength="60" />
+</fieldset>   
+<br/>
+<fieldset>
+        <legend>Ajouter une boisson:</legend><br>
+          <label for="nomProduit">Nom de la boisson </label>
+        <input type="text" id="nomProduit" name="nomProduit" value="<c:out value="${requestScope.produit.nomProduit}" />" size="20" maxlength="60" />
+<label for="prix">Prix de la boisson </label>
+        <input type="text" id="prix" name="prix" value="<c:out value="${requestScope.produit.prix}" />" size="20" maxlength="60" />
+</fieldset>      
 </form>    
-<span class="col2">Ajouter une boisson</span>
  <input type="submit" value="Ajouter" class="sansLabel" />
 </p>
 <p>
