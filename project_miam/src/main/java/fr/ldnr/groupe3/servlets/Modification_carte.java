@@ -28,7 +28,7 @@ public class Modification_carte extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	DAOManager daoManager = new DAOManager();
-		daoManager.start();
+/*		daoManager.start();
     
         // Créer une liste d'objets de type produit
         List<Produit> produit = new ArrayList<>();
@@ -36,10 +36,12 @@ public class Modification_carte extends HttpServlet {
        produit.add(new Produit("nomProduit", "typeProduit", "prix");
 
         // Appeler la vue
+       
         this.getServletContext()
                 .getRequestDispatcher("/WEB-INF/gerant_modification_carte_content.jsp")
-                .forward(request, response);
-
+                .forward(request, response);*/
+    }
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -55,5 +57,4 @@ public class Modification_carte extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

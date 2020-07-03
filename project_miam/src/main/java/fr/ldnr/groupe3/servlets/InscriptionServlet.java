@@ -2,6 +2,7 @@ package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,43 +63,45 @@ public class InscriptionServlet extends HttpServlet {
 		String complementAdresse = request.getParameter("complementAdresse");
 		int codePostale = Integer.parseInt(request.getParameter("codePostale"));
 		String Ville = request.getParameter("Ville");
-		String tel = request.getParameter("tel");
+		String tel = request.getParameter("Telephone");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		String formSoumis = request.getParameter("SIGNUP");
-		
-		if (formSoumis != null) {
-			System.out.println("formSoumis != null" + nomUser);
+//		String formSoumis = request.getParameter("formSoumis");
+//		if (formSoumis != null) {
 
-			int newIdUtiliateur = 0;
-			//obligé de passer par un try/catch à cause de la méthode de hash qui peut lancer une exception
-			try {
-				Utilisateur newUser = new Utilisateur(email, HashForm.hash(email, password), Role.CLIENT);
-				newIdUtiliateur = this.daoManager.getUtilisateurDAO().create(newUser);
-			} catch (NoSuchAlgorithmException e) {
-				System.out.println("Probleme lors du hash : " + e);
-			}
-
-			//test si il y a eu un problème lors de la création de l'utilisateur
-			if (newIdUtiliateur != 0) {
-				Client newClient = new Client();
-
-				newClient.setIdUtilisateur(newIdUtiliateur);
-				newClient.setNom(nomUser);
-				newClient.setPrenom(prenom);
-				newClient.setNumeroRue(numRue);
-				newClient.setRue(rue);
-				newClient.setComplement(complementAdresse);
-				newClient.setCodePostal(codePostale);
-				newClient.setVille(Ville);
-				newClient.setTelephone(tel);
-
-				this.daoManager.getClientDAO().create(newClient);
-			} else {
-				System.out.println("Problème lors de la création du compte utilisateur");
-			}
-			
+		int newIdUtiliateur = 0;
+		// obligé de passer par un try/catch à cause de la méthode de hash qui peut
+		// lancer une exception
+		try {
+			Utilisateur newUser = new Utilisateur(email, HashForm.hash(email, password), Role.CLIENT);
+			newIdUtiliateur = this.daoManager.getUtilisateurDAO().create(newUser);
+		} catch (NoSuchAlgorithmException e) {
+			System.out.println("Probleme lors du hash : " + e);
 		}
+
+		// test si il y a eu un problème lors de la création de l'utilisateur
+		if (newIdUtiliateur != 0) {
+			Client newClient = new Client();
+			Date today = new Date(System.currentTimeMillis());
+
+			newClient.setIdUtilisateur(newIdUtiliateur);
+			newClient.setNom(nomUser);
+			newClient.setPrenom(prenom);
+			newClient.setNumeroRue(numRue);
+			newClient.setRue(rue);
+			newClient.setComplement(complementAdresse);
+			newClient.setCodePostal(codePostale);
+			newClient.setVille(Ville);
+			newClient.setTelephone(tel);
+			newClient.setDateCreation(today);
+			
+			
+			this.daoManager.getClientDAO().create(newClient);
+		} else {
+			System.out.println("Problème lors de la création du compte utilisateur");
+		}
+
+//		}
 		this.daoManager.stop();
 		doGet(request, response);
 	}

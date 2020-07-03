@@ -8,10 +8,10 @@
 					<input class="text" type="text" name="prenomUser" placeholder="Prenom" required="">
 					<input class="text" type="number" name="numRue" placeholder="Numero rue" required="">
 					<input class="text" type="text" name="rue" placeholder="Rue" required="">
-					<input class="text" type="text" name="complementAdresse" placeholder="Complement Adresse" required="">
+					<input class="text" type="text" name="complementAdresse" placeholder="Complement Adresse">
 					<input class="text" type="number" name="codePostale" placeholder="Code Postale" required="">
 					<input class="text" type="text" name="Ville" placeholder="ville" required="">
-					<input class="text" type="tel" name="Téléphone" placeholder="Téléphone" required="">
+					<input class="text" type="tel" name="Telephone" placeholder="Téléphone" required="">
 					<input class="text email" type="email" name="email" placeholder="Email" required="">
 					<input class="text" type="password" name="password" placeholder="Mot de passe" required="">
 					<input class="text w3lpass" type="password" name="password" placeholder="Confirmer le mot de passe" required="">
