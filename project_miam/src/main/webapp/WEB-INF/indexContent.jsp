@@ -28,7 +28,7 @@
       </div>
       <div class="grid_12">
         <div class="car_wrap">
-        <h2>La Carte</h2>
+        <h2>Nos Cartes</h2>
         <a href="#" class="prev"></a><a href="#" class="next"></a>
         <ul class="carousel1">
           <li><div><img src="./include/images/page1_img1.jpg" alt="">
@@ -81,8 +81,7 @@
 			<div class="grid_6">
 				<h3>Email Updates</h3>
 				<p class="col1">
-					Join our digital mailing list and get news<br> deals and be
-					first to know about events
+					Réjoignez Nous
 				</p>
 				<form id="newsletter">
 					<div class="success">Your subscribe request has been sent!</div>
