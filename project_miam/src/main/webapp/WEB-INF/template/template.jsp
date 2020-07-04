@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%><!DOCTYPE html>
+	pageEncoding="ISO-8859-1"%>
+	
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>${param.title}</title>
 
 <link rel="icon" href="./include/images/favicon.ico">
 <link rel="shortcut icon" href="./include/images/favicon.ico" />
-
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,7 +16,7 @@
 <!-- web font -->
 <link
 	href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i"
-	rel="stylesheet">
+	rel="stylesheet">3
 <!-- //web font -->
 
 

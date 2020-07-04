@@ -1,108 +1,83 @@
-<div class="content page1">
-	<div class="ic">More Website Templates @ TemplateMonster.com -
-		May 13, 2013!</div>
-	<div class="container_12">
-		<div class="grid_7">
-			<h2>Welcome</h2>
-			<div class="page1_block col1">
-				<img src="./include/images/welcome_img.png" alt="">
-				<div class="extra_wrapper">
-					<p>
-						<span class="col2"><a
-							href="http://blog.templatemonster.com/free-website-templates/"
-							rel="nofollow">Click here</a></span> for more info about this free
-						website template created by TemplateMonster.com
-					</p>
-					Aenean nonummy hendrerit mau rellus porta. Fusce suscipit varius m
-					sociis natoque penaibet magni parturient montes nasetur
-					ridiculumula dui. <br> <a href="#" class="btn">more</a>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-		<div class="grid_5">
-			<h2>Features</h2>
-			<ul class="list">
-				<li><a href="#">Unlimited consultations and/or planning</a></li>
-				<li><a href="#">Expert advice on traditions, customs,
-						aetiquette</a></li>
-				<li><a href="#">Determine and stay within budget</a></li>
-				<li><a href="#">Choosing the right Wedding Venue</a></li>
-				<li><a href="#">Provide preferred vendor's list</a></li>
-				<li><a href="#">Assist with wedding scheme and design</a></li>
-			</ul>
-		</div>
-		<div class="clear"></div>
-		<div class="grid_12">
-			<div class="hor_separator"></div>
-		</div>
-		<div class="grid_12">
-			<div class="car_wrap">
-				<h2>Best Choice</h2>
-				<a href="#" class="prev"></a><a href="#" class="next"></a>
-				<ul class="carousel1">
-					<li><div>
-							<img src="./include/images/page1_img1.jpg" alt="">
-							<div class="col1 upp">
-								<a href="#">Lorem ipsum doamet consectet</a>
-							</div>
-							<span> Dorem ipsum dolor amet consectetur</span>
-							<div class="price">45$</div>
-						</div></li>
-					<li><div>
-							<img src="./include/images/page1_img2.jpg" alt="">
-							<div class="col1 upp">
-								<a href="#">Lorem ipsum doamet consectet</a>
-							</div>
-							<span> Dorem ipsum dolor amet consectetur</span>
-							<div class="price">45$</div>
-						</div></li>
-					<li><div>
-							<img src="./include/images/page1_img3.jpg" alt="">
-							<div class="col1 upp">
-								<a href="#">Lorem ipsum doamet consectet</a>
-							</div>
-							<span> Dorem ipsum dolor amet consectetur</span>
-							<div class="price">45$</div>
-						</div></li>
-					<li><div>
-							<img src="./include/images/page1_img4.jpg" alt="">
-							<div class="col1 upp">
-								<a href="#">Lorem ipsum doamet consectet</a>
-							</div>
-							<span> Dorem ipsum dolor amet consectetur</span>
-							<div class="price">45$</div>
-						</div></li>
-					<li><div>
-							<img src="./include/images/page1_img3.jpg" alt="">
-							<div class="col1 upp">
-								<a href="#">Lorem ipsum doamet consectet</a>
-							</div>
-							<span> Dorem ipsum dolor amet consectetur</span>
-							<div class="price">45$</div>
-						</div></li>
-				</ul>
-			</div>
-
-		</div>
-		<div class="clear"></div>
-		<div class="bottom_block">
-			<div class="grid_6">
-				<h3>Follow Us</h3>
-				<div class="socials">
-					<a href="#"></a> <a href="#"></a> <a href="#"></a>
-				</div>
-				<nav>
-					<ul>
-						<li class="current"><a href="index.jsp">Home</a></li>
-						<li><a href="/WEB-INF/index_1.jsp">About Us</a></li>
-						<li><a href="/WEB-INF/index_2.jsp">Menu</a></li>
-						<li><a href="/WEB-INF/index_3.jsp">Portfolio</a></li>
-						<li><a href="/WEB-INF/index_4.jsp">News </a></li>
-						<li><a href="/WEB-INF/index_5.jsp">Contacts</a></li>
-					</ul>
-				</nav>
-			</div>
+<div class="content page1"><div class="ic">group3 LDNR formation 2020</div>
+  <div class="container_12">
+      <div class="grid_7">
+        <h2>Bienvenue à MIAM-MIAM Gourmet</h2>
+        <div class="page1_block col1">
+          <img src="images/welcome_img.png" alt="">
+          <div class="extra_wrapper">
+            <!-- <p><span class="col2"><a href="http://blog.templatemonster.com/free-website-templates/" rel="nofollow"></a>
+ -->            </span> L'équipe Groupe 3 nous présente son restaurant  étoilé toulousain. </p>
+            Tout est épuré comme pour mieux aller à l'essentiel. Nous vous accueillons dans un expérience culinaire unique.
+            <a href="#" class="btn">more</a>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="grid_5">
+        <h2>Nos Spécialités</h2>
+        <ul class="list">
+          <li><a href="#">Poulet à la Coriandre</a></li>
+          <li><a href="#">Tomate à la provinciale</a></li>
+          <li><a href="#">Souris d'agneau</a></li>
+          <li><a href="#">Tiramisu aux Fraises</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+      <div class="grid_12">
+        <div class="hor_separator"></div>
+      </div>
+      <div class="grid_12">
+        <div class="car_wrap">
+        <h2>La Carte</h2>
+        <a href="#" class="prev"></a><a href="#" class="next"></a>
+        <ul class="carousel1">
+          <li><div><img src="./include/images/page1_img1.jpg" alt="">
+          <div class="col1 upp"> <a href="#">Poulet à la Coriandre</a></div>
+          <span> Poulet à la Coriandre</span>
+          <div class="price">29Eur</div></div>
+          </li>
+          <li><div><img src="./include/images/page1_img2.jpg" alt="">
+          <div class="col1 upp"> <a href="#">Tomate à la provinciale</a></div>
+          <span> Tomate à la provinciale</span>
+          <div class="price">17Eur</div></div>
+          </li>
+          <li><div><img src="./include/images/page1_img3.jpg" alt="">
+          <div class="col1 upp"> <a href="#">Tiramisu aux Fraises </a></div>
+          <span> Souris d'agneau</span>
+          <div class="price">15Eur</div></div>
+          </li>
+          <li><div><img src="./include/images/page1_img4.jpg" alt="">
+          <div class="col1 upp"> <a href="#">Poulet à la Coriandre</a></div>
+          <span> Poulet à la Coriandre</span>
+          <div class="price">15Eur</div></div>
+          </li>
+          <li><div><img src="./include/images/page1_img3.jpg" alt="">
+          <div class="col1 upp"> <a href="#">IRAMISU AUX FRAISES</a></div>
+          <span> Tiramisu aux Fraises</span>
+          <div class="price">15 Eur</div></div>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="clear"></div>
+    <div class="bottom_block">
+      <div class="grid_6">
+        <h3>Follow Us</h3>
+        <div class="socials">
+          <a href="#"></a>
+          <a href="#"></a>
+          <a href="#"></a>
+        </div>
+        <nav><ul>
+                   <li class="current"><a href="index.html">Accueil</a></li>
+                   <li ><a href="index-1.html">A propos de nous</a></li>
+                   <li><a href="index-2.html">Menu</a></li>
+                   <li><a href="index-3.html">Portefeuille</a></li>
+                   <li><a href="index-4.html">News </a></li>
+                   <li><a href="index-5.html">Connexion</a></li>
+                 </ul></nav>
+      </div>
 			<div class="grid_6">
 				<h3>Email Updates</h3>
 				<p class="col1">

@@ -24,7 +24,7 @@
 					</div>
 					<input type="submit" name="formSoumis" value="Inscription">
 				</form>
-				<p>Vous avez un compte ? <a href="#">Connectez vous</a></p>
+				<p>Vous avez un compte ? <a href="connexionForm">Connectez vous</a></p>
 			</div>
 		</div>
 	</div>
