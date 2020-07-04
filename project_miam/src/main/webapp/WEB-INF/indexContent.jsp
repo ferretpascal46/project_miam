@@ -43,12 +43,12 @@
           </li>
           <li><div><img src="./include/images/page1_img3.jpg" alt="">
           <div class="col1 upp"> <a href="#">Tiramisu aux Fraises </a></div>
-          <span> Souris d'agneau</span>
+          <span> Tiramisu aux Fraises</span>
           <div class="price">15Eur</div></div>
           </li>
           <li><div><img src="./include/images/page1_img4.jpg" alt="">
-          <div class="col1 upp"> <a href="#">Poulet à la Coriandre</a></div>
-          <span> Poulet à la Coriandre</span>
+          <div class="col1 upp"> <a href="#">Pilaf de Quinoa</a></div>
+          <span>Pilaf de Quinoa</span>
           <div class="price">15Eur</div></div>
           </li>
           <li><div><img src="./include/images/page1_img3.jpg" alt="">
