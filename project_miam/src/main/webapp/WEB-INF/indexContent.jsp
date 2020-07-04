@@ -7,7 +7,7 @@
           <div class="extra_wrapper">
             <!-- <p><span class="col2"><a href="http://blog.templatemonster.com/free-website-templates/" rel="nofollow"></a>
  -->            </span> L'équipe Groupe 3 nous présente son restaurant  étoilé toulousain. </p>
-            Tout est épuré comme pour mieux aller à l'essentiel. Nous vous accueillons dans un expérience culinaire unique.
+            Tout est épuré comme pour mieux aller à l'essentiel. Nous vous accueillons dans une expérience culinaire unique.
             <a href="#" class="btn">more</a>
           </div>
           <div class="clear"></div>
@@ -52,7 +52,7 @@
           <div class="price">15Eur</div></div>
           </li>
           <li><div><img src="./include/images/page1_img3.jpg" alt="">
-          <div class="col1 upp"> <a href="#">IRAMISU AUX FRAISES</a></div>
+          <div class="col1 upp"> <a href="#">TIRAMISU AUX FRAISES</a></div>
           <span> Tiramisu aux Fraises</span>
           <div class="price">15 Eur</div></div>
           </li>
