@@ -36,6 +36,7 @@ public class ConnexionFormServlet extends HttpServlet {
 	 *      response)
 	 */
 	private static final String VUE = "/WEB-INF/connexionForm.jsp";
+	private static final String URL_REDIRECTION = "/index";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -60,6 +61,7 @@ public class ConnexionFormServlet extends HttpServlet {
 		String motDePasse = request.getParameter("password");
 		String hashedPass = "";
 		String message = "";
+		
 
 		try {
 			hashedPass = HashForm.hash(adresseMail, motDePasse);
@@ -74,9 +76,8 @@ public class ConnexionFormServlet extends HttpServlet {
 			System.out.println("Connecté");
 			session.setAttribute("user", user);
 			this.daoManager.stop();
-			//response.sendRedirect("/index");
-			doGet(request, response);
-
+			response.sendRedirect(getServletContext().getContextPath() + URL_REDIRECTION);
+			
 		} else {
 			message = "Invalid email/password";
 			System.out.println(message);
@@ -84,6 +85,6 @@ public class ConnexionFormServlet extends HttpServlet {
 			this.daoManager.stop();
 			doGet(request, response);
 		}
-
+		
 	}
 }
