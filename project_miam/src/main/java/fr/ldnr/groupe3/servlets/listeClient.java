@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.mapping.Map;
-
 import fr.ldnr.groupe3.DAO.DAOManager;
 import fr.ldnr.groupe3.Enum.Role;
 import fr.ldnr.groupe3.beans.Client;

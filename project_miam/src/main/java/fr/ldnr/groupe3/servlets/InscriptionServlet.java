@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
 import fr.ldnr.groupe3.Enum.Role;
@@ -37,6 +38,7 @@ public class InscriptionServlet extends HttpServlet {
 	 *      response)
 	 */
 	private static final String VUE = "/WEB-INF/inscription.jsp";
+	private static final String URL_REDIRECTION = "/index";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -55,6 +57,7 @@ public class InscriptionServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		this.daoManager.start();
+		Utilisateur newUser = new Utilisateur();
 		// recupération des données du formulaire
 		String nomUser = request.getParameter("nomUser");
 		String prenom = request.getParameter("prenomUser");
@@ -68,12 +71,13 @@ public class InscriptionServlet extends HttpServlet {
 		String password = request.getParameter("password");
 //		String formSoumis = request.getParameter("formSoumis");
 //		if (formSoumis != null) {
+		String message = "";
 
 		int newIdUtiliateur = 0;
 		// obligé de passer par un try/catch à cause de la méthode de hash qui peut
 		// lancer une exception
 		try {
-			Utilisateur newUser = new Utilisateur(email, HashForm.hash(email, password), Role.CLIENT);
+			newUser = new Utilisateur(email, HashForm.hash(email, password), Role.CLIENT);
 			newIdUtiliateur = this.daoManager.getUtilisateurDAO().create(newUser);
 		} catch (NoSuchAlgorithmException e) {
 			System.out.println("Probleme lors du hash : " + e);
@@ -93,16 +97,25 @@ public class InscriptionServlet extends HttpServlet {
 			newClient.setCodePostal(codePostale);
 			newClient.setVille(Ville);
 			newClient.setTelephone(tel);
-			newClient.setDateCreation(today);
-			
+			newClient.setDateCreation(today);	
 			
 			this.daoManager.getClientDAO().create(newClient);
+			
+			HttpSession session = request.getSession();
+			System.out.println("Connecté");
+			session.setAttribute("user", newUser);
+			this.daoManager.stop();
+			response.sendRedirect(getServletContext().getContextPath() + URL_REDIRECTION);					
+			
 		} else {
 			System.out.println("Problème lors de la création du compte utilisateur");
+			message = "Problème lors de la création du compte utilisateur";
+			request.setAttribute("message", message);
+			this.daoManager.stop();
+			doGet(request, response);
 		}
 
 //		}
-		this.daoManager.stop();
-		doGet(request, response);
+		
 	}
 }

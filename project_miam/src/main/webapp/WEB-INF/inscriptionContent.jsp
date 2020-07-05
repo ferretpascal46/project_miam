@@ -22,6 +22,7 @@
 						</label>
 						<div class="clear"> </div>
 					</div>
+					<p id= messageInscription>${requestScope.message}</p>
 					<input type="submit" name="formSoumis" value="Inscription">
 				</form>
 				<p>Vous avez un compte ? <a href="connexionForm">Connectez vous</a></p>

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
-import fr.ldnr.groupe3.Enum.Role;
 import fr.ldnr.groupe3.beans.Utilisateur;
 import fr.ldnr.groupe3.forms.HashForm;
 

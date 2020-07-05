@@ -48,17 +48,19 @@ public class Creation_new_gerant extends HttpServlet {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-
-		int newIdUtiliateur = 0;
+		String message = "";
+		
 		// obligé de passer par un try/catch à cause de la méthode de hash qui peut
 		// lancer une exception
 		try {
 			Utilisateur newUser = new Utilisateur(email, HashForm.hash(email, password), Role.GERANT);
-			newIdUtiliateur = this.daoManager.getUtilisateurDAO().create(newUser);
+			this.daoManager.getUtilisateurDAO().create(newUser);
+			message = "Inscription validée";
 		} catch (NoSuchAlgorithmException e) {
 			System.out.println("Probleme lors du hash : " + e);
 		}
 		
+		request.setAttribute("message", message);
 		this.daoManager.stop();
 		doGet(request, response);
 	}

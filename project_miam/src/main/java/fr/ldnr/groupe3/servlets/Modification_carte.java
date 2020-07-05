@@ -1,7 +1,6 @@
 package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,14 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.protobuf.Empty;
-
 import fr.ldnr.groupe3.DAO.DAOManager;
-import fr.ldnr.groupe3.Enum.Role;
 import fr.ldnr.groupe3.Enum.TypeProduit;
 import fr.ldnr.groupe3.beans.Produit;
-import fr.ldnr.groupe3.beans.Utilisateur;
-import fr.ldnr.groupe3.forms.HashForm;
 
 /**
  * Servlet implementation class Modification_carte
