@@ -5,7 +5,7 @@
       <input type="text" name="email"placeholder="Adresse mail de l'utilisateur"/>
       <input type="password" name ="password"placeholder="Mot de passe"/>
        <button>Connexion</button>
-      <p class="message">Vous avez un compte?<a href="inscription"> Connectez vous</a>
+      <p class="message">Vous n'avez pas de compte?<a href="inscription"> Inscrivez-vous</a>
       </p>
     </form>
   </div>
