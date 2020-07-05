@@ -225,7 +225,17 @@ text-align:center}
 .colonne5 {width:10;
 text-align:center} 
 
+.tableplat {width:80%}
+.colonneplat1 {width:20;
+text-align:center}
+.colonneplat2 {width:30;
+text-align:center}
+.colonneplat3 {width:20;
+text-align:center}
+.colonneplat4 {width:30;
+text-align:center}
 
+.ajouter {text-align: right;}
 
 /*header*/
 header {
