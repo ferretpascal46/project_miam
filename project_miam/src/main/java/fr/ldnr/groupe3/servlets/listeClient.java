@@ -46,7 +46,7 @@ public class listeClient extends HttpServlet {
 		List<Client> clients = daoManager.getClientDAO().list();
 		HashMap<Client,String> hmUtilisateurs = new HashMap<Client, String>();
 		for (Utilisateur utilisateur : utilisateurs) {
-			if (utilisateur.getRole() == Role.CLIENT) {
+			if (utilisateur.getRole() == Role.CLIENT ) {
 				for (Client client : clients) {
 					if(client.getIdUtilisateur() == utilisateur.getIdUtilisateur()) {
 						hmUtilisateurs.put(client, utilisateur.getAdresseMail());
