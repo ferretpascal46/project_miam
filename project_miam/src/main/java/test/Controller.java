@@ -16,7 +16,7 @@ public class Controller {
 		this.daoManager.start();
 		
 		Utilisateur user = new Utilisateur();
-		user = this.daoManager.getUtilisateurDAO().findIdUtilisateur("p@mail.fr");		
+		user = this.daoManager.getUtilisateurDAO().findUtilisateurByMail("p@mail.fr");		
 		System.out.println("id = " + user.getIdUtilisateur());
 		
 		/*

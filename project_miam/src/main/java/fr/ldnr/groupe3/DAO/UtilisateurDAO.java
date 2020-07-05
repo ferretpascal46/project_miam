@@ -76,15 +76,19 @@ public class UtilisateurDAO {
 		return result;
 	}
 	
-	public Utilisateur findIdUtilisateur(String adresseMail) {
+	public Utilisateur findUtilisateurByMail(String adresseMail) {
 		EntityManager em = emf.createEntityManager();		
 		//e.lastName= :lastName
 		TypedQuery<Utilisateur> query = em.createQuery("SELECT u FROM Utilisateur u WHERE u.adresseMail = :adresseMail", Utilisateur.class);
 		query.setParameter("adresseMail", adresseMail);
-		List<Utilisateur> result = query.getResultList();
-					
-		em.close();		
-		return result.get(0);
+		List<Utilisateur> result = query.getResultList();					
+		em.close();
+		
+		try {
+			return  result.get(0);
+		} catch (Exception e){
+			return  null;
+		}
 	}
 
 }
