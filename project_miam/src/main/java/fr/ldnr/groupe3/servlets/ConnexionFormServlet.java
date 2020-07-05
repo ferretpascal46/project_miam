@@ -59,6 +59,7 @@ public class ConnexionFormServlet extends HttpServlet {
 		String adresseMail = request.getParameter("email");
 		String motDePasse = request.getParameter("password");
 		String hashedPass = "";
+		String message = "";
 
 		try {
 			hashedPass = HashForm.hash(adresseMail, motDePasse);
@@ -73,10 +74,11 @@ public class ConnexionFormServlet extends HttpServlet {
 			System.out.println("Connecté");
 			session.setAttribute("user", user);
 			this.daoManager.stop();
+			//response.sendRedirect("/index");
 			doGet(request, response);
 
 		} else {
-			String message = "Invalid email/password";
+			message = "Invalid email/password";
 			System.out.println(message);
 			request.setAttribute("message", message);
 			this.daoManager.stop();

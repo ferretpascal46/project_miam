@@ -20,21 +20,17 @@
 
 
 						<c:choose>
-
 							<c:when test="${empty sessionScope.user}">
 								<li><a href="<c:url value='/inscription' />">S'inscrire</a></li>
 								<li><a href="<c:url value='/connexionForm' />">Connexion</a></li>
 
 							</c:when>
 							<c:otherwise>
-								<c:if
-									test='${sessionScope.user.getRole()=="CLIENT" }'>
+								<c:if test='${sessionScope.user.getRole()=="CLIENT" }'>
 									<li><a href="<c:url value='/panier' />">votre Panier </a></li>
 								</c:if>
 
-
-								<c:if
-									test='${sessionScope.user.getRole()=="GERANT" }'>
+								<c:if test='${sessionScope.user.getRole()=="GERANT" }'>
 
 									<li><a href="<c:url value="/creation_gerant" />">Creer
 											un nouveau gérant</a></li>
@@ -43,8 +39,13 @@
 									<li><a href="<c:url value='/modification_carte' />">Modifications
 											des plats</a></li>
 								</c:if>
+																
+								<li>									
+									<a href="<c:url value="/deconnexion" />">Déconnexion</a>
+									<span id="user">${sessionScope.user.getRole()} : ${sessionScope.user.getAdresseMail()}</span>
+								</li>
 
-								<li><a href="<c:url value="/deconnexion" />">Déconnexion</a></li>
+
 							</c:otherwise>
 						</c:choose>
 
