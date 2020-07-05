@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html;   charset=utf-8"
 	pageEncoding="ISO-8859-1"%>
 	
 <!DOCTYPE html>
@@ -17,6 +17,8 @@
 <link
 	href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i"
 	rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <!-- //web font -->
 
 
@@ -94,6 +96,33 @@
       <link rel="stylesheet" media="screen" href="css/ie.css">
 
     <![endif]-->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="keywords" content="Shopping Cart a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta-Tags -->
+	<!-- Index-Page-CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<!-- //Custom-Stylesheet-Links -->
+	<!--fonts -->
+	<link href="//fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //fonts -->
+
+	<!-- Font-Awesome-File-Links -->
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/font-awesome.css" type="text/css" media="all">
+	<!-- //Font-Awesome-File-Links -->
+    
 </head>
 
 <body>
