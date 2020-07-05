@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.hibernate.mapping.Map;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
+import fr.ldnr.groupe3.Enum.Role;
 import fr.ldnr.groupe3.beans.Client;
 import fr.ldnr.groupe3.beans.Utilisateur;
 
@@ -45,11 +46,13 @@ public class listeClient extends HttpServlet {
 		List<Client> clients = daoManager.getClientDAO().list();
 		HashMap<Client,String> hmUtilisateurs = new HashMap<Client, String>();
 		for (Utilisateur utilisateur : utilisateurs) {
-			for (Client client : clients) {
-				if(client.getIdUtilisateur() == utilisateur.getIdUtilisateur()) {
-					hmUtilisateurs.put(client, utilisateur.getAdresseMail());
+			if (utilisateur.getRole() == Role.CLIENT) {
+				for (Client client : clients) {
+					if(client.getIdUtilisateur() == utilisateur.getIdUtilisateur()) {
+						hmUtilisateurs.put(client, utilisateur.getAdresseMail());
+					}
 				}
-			}
+			}			
 		}
 		
 		request.setAttribute("utilisateurs", hmUtilisateurs);
