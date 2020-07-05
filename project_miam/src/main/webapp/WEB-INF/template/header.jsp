@@ -17,18 +17,37 @@
 								<li><a href="#">Services</a></li>
 
 							</ul></li>-->
-						<li><a href="<c:url value='/listeClient' />">Liste des
-								clients</a></li>
 
-						<li><a href="<c:url value='/panier' />">votre Panier </a></li>
-						<li><a href="<c:url value='/connexionForm' />">Connexion</a></li>
-						<li><a href="<c:url value='/modification_carte' />">Modifications
-								des plats</a></li>
 
-						<li><a href="<c:url value="/creation_gerant" />">Creer un
-								nouveau gérant</a></li>
+						<c:choose>
 
-						<li><a href="<c:url value="/deconnexion" />">Déconnexion</a></li>
+							<c:when test="${empty sessionScope.user}">
+								<li><a href="<c:url value='/inscription' />">S'inscrire</a></li>
+								<li><a href="<c:url value='/connexionForm' />">Connexion</a></li>
+
+							</c:when>
+							<c:otherwise>
+								<c:if
+									test='${sessionScope.user.getRole()=="CLIENT" }'>
+									<li><a href="<c:url value='/panier' />">votre Panier </a></li>
+								</c:if>
+
+
+								<c:if
+									test='${sessionScope.user.getRole()=="GERANT" }'>
+
+									<li><a href="<c:url value="/creation_gerant" />">Creer
+											un nouveau gérant</a></li>
+									<li><a href="<c:url value='/listeClient' />">Liste des
+											clients</a></li>
+									<li><a href="<c:url value='/modification_carte' />">Modifications
+											des plats</a></li>
+								</c:if>
+
+								<li><a href="<c:url value="/deconnexion" />">Déconnexion</a></li>
+							</c:otherwise>
+						</c:choose>
+
 					</ul>
 				</nav>
 				<div class="clear"></div>
