@@ -210,6 +210,23 @@ a.btn.m1 {
 	background: url(../images/hor_separator.png) 0 bottom no-repeat;
 	height: 40px;
 }
+
+/*tableau css */
+.table1 {width:100%;
+ text-align:center} 
+.colonne1 {width:20;
+text-align:center}
+.colonne2 {width:20%;
+text-align:center} 
+.colonne3 {width:30%;
+text-align:center} 
+.colonne4 {width:20%;
+text-align:center} 
+.colonne5 {width:10;
+text-align:center} 
+
+
+
 /*header*/
 header {
 	display: block;
