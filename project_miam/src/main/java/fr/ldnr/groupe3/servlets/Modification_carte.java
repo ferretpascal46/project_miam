@@ -45,9 +45,21 @@ public class Modification_carte extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		daoManager.start();
+		String supprimer = request.getParameter("supprimer");
+		String modifier = request.getParameter("modifier");
+		System.out.println(supprimer);
+		
+		
+		if(supprimer != null &&supprimer != "") {
+			System.out.println(Integer.parseInt(request.getParameter("idLigne")));
+			this.daoManager.getProduitDAO().delete(Integer.parseInt(request.getParameter("idLigne")));
+
+		}
+		
 		List<Produit> produits = this.daoManager.getProduitDAO().list();
 
 		request.setAttribute("produits", produits);
+
 
 		daoManager.stop();
 
@@ -82,6 +94,8 @@ public class Modification_carte extends HttpServlet {
 			this.daoManager.getProduitDAO().create(newBoisson);
 			this.daoManager.stop();
 		}
+		
+		
 
 		doGet(request, response);
 	}

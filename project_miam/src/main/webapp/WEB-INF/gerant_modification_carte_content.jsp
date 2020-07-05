@@ -53,8 +53,8 @@
 		<tr>
 			<td>${produit.getNomProduit() }</td>
 			<td>${produit.getPrix() }</td>
-			<td><input type="button" value="Modifier"></td>
-			<td><input type="button" value="Supprimer"></td>
+			<td><a href="<c:url value='/modification_carte' />?supprimer=supprimer&idLigne=${produit.getIdProduit() }">supprimer</a></td>
+			<td><a href="<c:url value='/modification_carte' />?modifier=modifier&idLigne=${produit.getIdProduit() }">modifier</a></td>
 		<tr>
 	</c:forEach>
 </table>
