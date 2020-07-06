@@ -41,6 +41,7 @@ public class ConnexionFormServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("page", "connexion");
 
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 

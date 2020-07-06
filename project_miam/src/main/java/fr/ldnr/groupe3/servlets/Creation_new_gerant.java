@@ -36,6 +36,8 @@ public class Creation_new_gerant extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setAttribute("page", "inscriptionGerant");
+
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 

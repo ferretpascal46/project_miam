@@ -33,7 +33,8 @@ public class Commande extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		request.setAttribute("page", "commande");
+
 		daoManager.start();
 		List<Produit> produit = daoManager.getProduitDAO().list();
 		

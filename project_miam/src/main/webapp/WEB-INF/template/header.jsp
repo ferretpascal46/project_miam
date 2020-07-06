@@ -9,7 +9,7 @@
 			<div class="menu_block">
 				<nav class="">
 					<ul class="sf-menu">
-						<li class="current"><a href="<c:url value='/index' />">Accueil</a></li>
+						<li <c:if test="${requestScope.page == 'index'}">class="current"</c:if>><a href="<c:url value='/index' />">Accueil</a></li>
 						<!--  <li class="with_ul"><a href="<c:url value='/index_1' />">Nous</a>
 							<ul>
 								<li><a href="#"> Accueil</a></li>
@@ -21,22 +21,22 @@
 
 						<c:choose>
 							<c:when test="${empty sessionScope.user}">
-								<li><a href="<c:url value='/inscription' />">S'inscrire</a></li>
-								<li><a href="<c:url value='/connexionForm' />">Connexion</a></li>
+								<li <c:if test="${requestScope.page == 'inscription'}">class="current"</c:if>><a href="<c:url value='/inscription' />">S'inscrire</a></li>
+								<li <c:if test="${requestScope.page == 'connexion'}">class="current"</c:if>><a href="<c:url value='/connexionForm' />">Connexion</a></li>
 
 							</c:when>
 							<c:otherwise>
 								<c:if test='${sessionScope.user.getRole()=="CLIENT" }'>
-									<li><a href="<c:url value='/panier' />">votre Panier </a></li>
+									<li <c:if test="${requestScope.page == 'panier'}">class="current"</c:if>><a href="<c:url value='/panier' />">votre Panier </a></li>
 								</c:if>
 
 								<c:if test='${sessionScope.user.getRole()=="GERANT" }'>
 
-									<li><a href="<c:url value="/creation_gerant" />">Creer
+									<li <c:if test="${requestScope.page == 'inscriptionGerant'}">class="current"</c:if>><a href="<c:url value="/creation_gerant" />">Creer
 											un nouveau gérant</a></li>
-									<li><a href="<c:url value='/listeClient' />">Liste des
+									<li <c:if test="${requestScope.page == 'listeClient'}">class="current"</c:if>><a href="<c:url value='/listeClient' />">Liste des
 											clients</a></li>
-									<li><a href="<c:url value='/modification_carte' />">Modifications
+									<li <c:if test="${requestScope.page == 'modificationCarte'}">class="current"</c:if>><a href="<c:url value='/modification_carte' />">Modifications
 											des plats</a></li>
 								</c:if>
 																

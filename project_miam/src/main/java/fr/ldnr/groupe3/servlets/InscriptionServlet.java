@@ -44,6 +44,7 @@ public class InscriptionServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.setAttribute("page", "inscription");
 
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 

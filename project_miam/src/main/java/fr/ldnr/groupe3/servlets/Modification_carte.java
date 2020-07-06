@@ -38,6 +38,8 @@ public class Modification_carte extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		request.setAttribute("page", "modificationCarte");
+
 		daoManager.start();
 		String supprimer = request.getParameter("supprimer");
 		String modifier = request.getParameter("modifier");

@@ -38,6 +38,8 @@ public class Index extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setAttribute("page", "index");
+
 		daoManager.start();
 
 		List<Produit> produits = daoManager.getProduitDAO().list();

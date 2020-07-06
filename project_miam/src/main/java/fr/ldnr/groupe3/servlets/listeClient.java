@@ -39,6 +39,8 @@ public class listeClient extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		request.setAttribute("page", "listeClient");
+
 		daoManager.start();
 		List<Utilisateur> utilisateurs = daoManager.getUtilisateurDAO().list();
 		List<Client> clients = daoManager.getClientDAO().list();

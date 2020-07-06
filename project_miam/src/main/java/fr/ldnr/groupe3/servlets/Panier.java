@@ -28,6 +28,8 @@ public class Panier extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setAttribute("page", "panier");
+
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
 
