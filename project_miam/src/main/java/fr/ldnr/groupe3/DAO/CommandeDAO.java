@@ -71,5 +71,4 @@ public class CommandeDAO {
 		em.close();
 		return result;
 	}
-
 }

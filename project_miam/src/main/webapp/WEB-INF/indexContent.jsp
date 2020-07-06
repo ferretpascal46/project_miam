@@ -49,27 +49,28 @@
 				<ul class="carousel1">
 					<c:forEach items="${requestScope.produits}" var="produit">
 						<li>
-							<div id="cart-${produit.getIdProduit() }">
+							<div id="cart-${produit.getIdProduit()}">
 								<div class="snipcart-details">
 									<form action="#" method="post">
-										<a href="#"> <c:if
-												test='${produit.getTypeProduit() == "PLAT" }'>
+										<a href="#"> 
+											<c:if test='${produit.getTypeProduit() == "PLAT" }'>
 												<img class ="affichage_plat" src="./include/images/plat.png" alt="un super plat">
-											</c:if> <c:if test='${produit.getTypeProduit() == "BOISSON" }'>
+											</c:if> 
+											<c:if test='${produit.getTypeProduit() == "BOISSON" }'>
 												<img class ="affichage_plat" src="./include/images/boisson.png" alt="une superbe boisson">
 											</c:if>
 										</a>
+										
 										<div class="col1 upp">
-											<a href="#">${produit.getNomProduit() } <b>${produit.getPrix() }</b>
+											<a href="#">${produit.getNomProduit() }</a> <b>${produit.getPrix() }</b>
 										</div>
 										<!-- <span> Poulet à la Coriandre</span> -->
-										<input type="hidden" name="cmd" value="_cart"> <input
-											type="hidden" name="add" value="1"> <input
-											type="hidden" name="w3l_item" value="Striped Top "> <input
-											type="hidden" name="amount" value="29.00"> <input
-											type="hidden" name="item_name" value="Product #001" />
-										<button type="submit" class="button w3l-cart" data-id="cart-1">Ajouter
-											au panier</button>
+										<input type="hidden" name="cmd" value="_cart"> 
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3l_item" value="Striped Top "> 
+										<input type="hidden" name="amount" value="29.00"> 
+										<input type="hidden" name="item_name" value="Product #001" />
+										<button type="submit" class="button w3l-cart" data-id="cart-${produit.getIdProduit()}">Ajouter au panier</button>										
 									</form>
 								</div>
 							</div>
