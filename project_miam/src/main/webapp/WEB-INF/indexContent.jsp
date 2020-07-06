@@ -12,16 +12,16 @@
 	<div class="ic">group3 LDNR formation 2020</div>
 	<div class="container_12">
 		<div class="grid_7">
-			<h2>Bienvenue Ã  MIAM-MIAM Gourmet</h2>
+			<h2>Bienvenue à MIAM-MIAM Gourmet</h2>
 			<div class="page1_block col1">
 				<img src="images/welcome_img.png" alt="">
 				<div class="extra_wrapper">
 					<!-- <p><span class="col2"><a href="http://blog.templatemonster.com/free-website-templates/" rel="nofollow"></a>
  -->
-					</span> L'Ã©quipe Groupe 3 nous prÃ©sente son restaurant Ã©toilÃ© toulousain.
+					</span> L'Equipe Groupe 3 vous présente son restaurant étoilé toulousain.
 					</p>
-					Tout est Ã©purÃ© comme pour mieux aller Ã  l'essentiel. Nous vous
-					accueillons dans une expÃ©rience culinaire unique. <a href="#"
+					Tout est épuré comme pour mieux aller à l'essentiel. Nous vous
+					accueillons dans une expérience culinaire unique. <a href="#"
 						class="btn">more</a>
 				</div>
 				<div class="clear"></div>
@@ -29,10 +29,10 @@
 		</div>
 		<div class="grid_5">
 
-			<h2>Nos SpÃ©cialitÃ©s</h2>
+			<h2>Nos Spécialités</h2>
 			<ul class="list">
-				<li><a href="#">Poulet Ã  la Coriandre</a></li>
-				<li><a href="#">Tomate Ã  la provinciale</a></li>
+				<li><a href="#">Poulet à la Coriandre</a></li>
+				<li><a href="#">Tomate à la provinciale</a></li>
 				<li><a href="#">Souris d'agneau</a></li>
 				<li><a href="#">Tiramisu aux Fraises</a></li>
 			</ul>
@@ -54,7 +54,7 @@
 									<a href="#"> <img src="./include/images/page1_img1.jpg"
 										alt=""></a>
 									<div class="col1 upp">
-										<a href="#">Poulet Ã  la Coriandre <b>29 Eur</b>
+										<a href="#">Poulet à la Coriandre <b>29 Eur</b>
 									</div>
 									<!-- <span> Poulet Ã  la Coriandre</span> -->
 									<input type="hidden" name="cmd" value="_cart"> <input
@@ -73,7 +73,7 @@
 							<img src="./include/images/page1_img2.jpg" alt="">
 
 							<div class="col1 upp">
-								<a href="#">Tomate Ã  la provinciale <b>19 Eur</b></a>
+								<a href="#">Tomate à la provinciale <b>19 Eur</b></a>
 								<button type="submit" class="button w3l-cart" data-id="cart-1">Ajouter
 									au panier</button>
 
@@ -136,7 +136,7 @@
 			</div>
 			<div class="grid_6">
 				<h3>Email Updates</h3>
-				<p class="col1">RÃ©joignez Nous</p>
+				<p class="col1">Rejoignez Nous</p>
 				<form id="newsletter">
 					<div class="success">Your subscribe request has been sent!</div>
 					<label class="email"> <input type="email"
@@ -160,9 +160,7 @@
 			</form>
 		</div>
 		<div class="copyright text-center">
-			<p>Â© 2017 Shopping Cart. All rights reserved | Design by
-				<a href="http://w3layouts.com">W3layouts</a>
-			</p>
+			<!-- <p>Â© 2017 Shopping Cart. All rights reserved | Design by  
+				<a href="http://w3layouts.com">W3layouts</a>  
+			</p>-->
 		</div>
-
-	</div>
