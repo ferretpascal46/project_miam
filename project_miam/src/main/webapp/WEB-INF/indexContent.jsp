@@ -54,9 +54,9 @@
 									<form action="#" method="post">
 										<a href="#"> <c:if
 												test='${produit.getTypeProduit() == "PLAT" }'>
-												<img src="./include/images/plat.png" alt="un super plat">
+												<img class ="affichage_plat" src="./include/images/plat.png" alt="un super plat">
 											</c:if> <c:if test='${produit.getTypeProduit() == "BOISSON" }'>
-												<img src="./include/images/boisson.png" alt="une superbe boisson">
+												<img class ="affichage_plat" src="./include/images/boisson.png" alt="une superbe boisson">
 											</c:if>
 										</a>
 										<div class="col1 upp">

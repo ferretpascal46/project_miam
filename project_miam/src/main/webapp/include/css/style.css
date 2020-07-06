@@ -22,6 +22,10 @@ a[href^="tel:"] {
 	-webkit-text-size-adjust: none;
 }
 
+img.affichage_plat{
+	height: 115px;
+}
+
 body {
 	font: 14px/18px Arial, Helvetica, sans-serif;
 	color: #826660;
