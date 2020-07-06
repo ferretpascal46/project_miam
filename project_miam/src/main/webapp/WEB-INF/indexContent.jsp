@@ -118,16 +118,6 @@
 				<div class="socials">
 					<a href="#"></a> <a href="#"></a> <a href="#"></a>
 				</div>
-				<nav>
-					<ul>
-						<li class="current"><a href="index.html">Accueil</a></li>
-						<li><a href="index-1.html">A propos de nous</a></li>
-						<li><a href="index-2.html">Menu</a></li>
-						<li><a href="index-3.html">Portefeuille</a></li>
-						<li><a href="index-4.html">News </a></li>
-						<li><a href="index-5.html">Connexion</a></li>
-					</ul>
-				</nav>
 			</div>
 			<div class="grid_6">
 				<h3>Email Updates</h3>
@@ -144,15 +134,6 @@
 		</div>
 		<div class="clear"></div>
 	</div>
-</div>
-<div class="wthreecartaits wthreecartaits2 cart cart box_1">
-	<form action="#" method="post" class="last">
-		<input type="hidden" name="cmd" value="_cart" /> <input type="hidden"
-			name="display" value="1" />
-		<button class="w3view-cart" type="submit" name="submit" value="">
-			view cart <span class="fa fa-cart-arrow-down" aria-hidden="true"></span>
-		</button>
-	</form>
 </div>
 <div class="copyright text-center">
 	<!-- <p>© 2017 Shopping Cart. All rights reserved | Design by  
