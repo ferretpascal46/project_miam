@@ -74,9 +74,12 @@
 											type="hidden" name="w3l_item" value="Striped Top "> <input
 											type="hidden" name="amount" value="29.00"> <input
 											type="hidden" name="item_name" value="Product #001" />
-										<button type="submit" class="button w3l-cart"
+											<c:if test="${!empty sessionScope.user}">
+											<button type="submit" class="button w3l-cart"
 											data-id="cart-${produit.getIdProduit()}">Ajouter au
 											panier</button>
+											</c:if>
+										
 									</form>
 								</div>
 							</div>
