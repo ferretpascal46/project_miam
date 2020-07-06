@@ -358,6 +358,7 @@ header h1 a img {
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 	margin-bottom: 19px;
+	margin-top: 19px;
 }
 
 .prev {
