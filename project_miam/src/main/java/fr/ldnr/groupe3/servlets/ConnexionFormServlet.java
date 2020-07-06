@@ -2,6 +2,8 @@ package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
+import fr.ldnr.groupe3.beans.LigneCommande;
 import fr.ldnr.groupe3.beans.Utilisateur;
 import fr.ldnr.groupe3.forms.HashForm;
 
@@ -57,6 +60,7 @@ public class ConnexionFormServlet extends HttpServlet {
 
 		this.daoManager.start();
 		Utilisateur user = new Utilisateur();
+		List<LigneCommande> panier = new ArrayList<>();
 		String adresseMail = request.getParameter("email");
 		String motDePasse = request.getParameter("password");
 		String hashedPass = "";
@@ -75,6 +79,7 @@ public class ConnexionFormServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			System.out.println("Connecté");
 			session.setAttribute("user", user);
+			session.setAttribute("panier", panier);
 			this.daoManager.stop();
 			response.sendRedirect(getServletContext().getContextPath() + URL_REDIRECTION);
 			

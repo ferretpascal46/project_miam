@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 
 import fr.ldnr.groupe3.Enum.TypeProduit;
 import fr.ldnr.groupe3.beans.Produit;
+import fr.ldnr.groupe3.beans.Utilisateur;
 
 public class ProduitDAO {
 	private EntityManagerFactory emf;
@@ -71,4 +72,19 @@ public class ProduitDAO {
 		em.close();
 		return result;
 	}
+	
+/*	public Produit findProduitById(String adresseMail) {
+		EntityManager em = emf.createEntityManager();		
+		//e.lastName= :lastName
+		TypedQuery<Utilisateur> query = em.createQuery("SELECT u FROM Utilisateur u WHERE u.adresseMail = :adresseMail", Utilisateur.class);
+		query.setParameter("adresseMail", adresseMail);
+		List<Utilisateur> result = query.getResultList();					
+		em.close();
+		
+		try {
+			return  result.get(0);
+		} catch (Exception e){
+			return  null;
+		}
+	}*/
 }

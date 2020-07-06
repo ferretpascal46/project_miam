@@ -1,6 +1,7 @@
 package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -8,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
+import fr.ldnr.groupe3.beans.LigneCommande;
 import fr.ldnr.groupe3.beans.Produit;
 
 /**
@@ -57,10 +60,16 @@ public class Index extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String idProduit = request.getParameter("idProduit");
-
-		System.out.println(idProduit);
+		int idProduit = Integer.parseInt(request.getParameter("idProduit"));
+		HttpSession session = request.getSession();
+		LigneCommande lc = new LigneCommande();
+		lc.setIdProduit(idProduit);
+		List<LigneCommande> panier = (ArrayList<LigneCommande>)session.getAttribute("panier");
+		panier.add(lc);
 		
+		for(LigneCommande commande : panier) {
+			System.out.println(commande.getIdProduit());
+		}
 		
 		doGet(request, response);
 	}

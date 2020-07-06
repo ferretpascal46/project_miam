@@ -1,6 +1,7 @@
 package fr.ldnr.groupe3.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -8,8 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
+import fr.ldnr.groupe3.beans.LigneCommande;
 import fr.ldnr.groupe3.beans.Produit;
 
 /**
@@ -36,7 +39,15 @@ public class Commande extends HttpServlet {
 		request.setAttribute("page", "commande");
 
 		daoManager.start();
+		
+		HttpSession session = request.getSession();
+		LigneCommande lc = new LigneCommande();
+		List<LigneCommande> panier = (ArrayList<LigneCommande>)session.getAttribute("panier");
+
+		
 		List<Produit> produit = daoManager.getProduitDAO().list();
+		
+		
 		
 		/*HashMap<Client,String> hmUtilisateurs = new HashMap<Client, String>();
 		for (Utilisateur utilisateur : utilisateurs) {
