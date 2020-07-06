@@ -7,12 +7,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		 <c:forEach items="${sessionScope.panier}" var="panier">
+		 <c:forEach items="${requestScope.produits}" var="panier">
 			<tr>
-				<td> ${panier.getIdProduit() }</td>
+				<td> ${panier.getTypeProduit()} :  ${panier.getNomProduit() }</td>
 				<td></td>
 				<td>quantite 1</td>
-				<td>+ Prix final</td>
+				<td>prix : ${panier.getPrix()} Eur</td>
 				<td><input type="button" value="-"><input type="button"
 					value="+"></td>
 			</tr>

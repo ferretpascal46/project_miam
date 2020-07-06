@@ -9,10 +9,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
 import fr.ldnr.groupe3.beans.Commande;
 import fr.ldnr.groupe3.beans.LigneCommande;
+import fr.ldnr.groupe3.beans.Produit;
 import fr.ldnr.groupe3.beans.Utilisateur;
 
 /**
@@ -39,6 +41,21 @@ public class Panier extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setAttribute("page", "panier");
 
+		daoManager.start();
+		
+		HttpSession session = request.getSession();
+		LigneCommande lc = new LigneCommande();
+		List<LigneCommande> panier = (ArrayList<LigneCommande>)session.getAttribute("panier");		
+		List<Produit> produit = new ArrayList<>();
+		
+		for(LigneCommande commande : panier) {
+			produit.add(daoManager.getProduitDAO().findProduitById(commande.getIdProduit()));
+			System.out.println(produit.get(0).getNomProduit());
+		}
+		
+		request.setAttribute("produits", produit);
+
+		daoManager.stop();
 		
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}

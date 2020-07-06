@@ -38,31 +38,7 @@ public class Commande extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setAttribute("page", "commande");
 
-		daoManager.start();
 		
-		HttpSession session = request.getSession();
-		LigneCommande lc = new LigneCommande();
-		List<LigneCommande> panier = (ArrayList<LigneCommande>)session.getAttribute("panier");
-
-		
-		List<Produit> produit = daoManager.getProduitDAO().list();
-		
-		
-		
-		/*HashMap<Client,String> hmUtilisateurs = new HashMap<Client, String>();
-		for (Utilisateur utilisateur : utilisateurs) {
-			if (utilisateur.getRole() == Role.CLIENT ) {
-				for (Client client : clients) {
-					if(client.getIdUtilisateur() == utilisateur.getIdUtilisateur()) {
-						hmUtilisateurs.put(client, utilisateur.getAdresseMail());
-					}
-				}
-			}			
-		}
-		*/
-		request.setAttribute("produits", produit);
-
-		daoManager.stop();
 
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
 	}
