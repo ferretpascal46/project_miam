@@ -21,15 +21,14 @@
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <!-- //web font -->
 
-
+		
 <c:forTokens items="${param.cssFiles}" delims="|" var="cssFile">
 	<link rel="stylesheet"
 		href='<c:url value="./include/css/${cssFile}.css" />' />
 </c:forTokens>
 
-<c:forTokens items="${param.jsFiles}" delims="|" var="cssFile">
-	<link rel="stylesheet"
-		href='<c:url value="./include/js/${jsFiles}.js" />' />
+<c:forTokens items="${param.jsFiles}" delims="|" var="jsFile">
+	<script src='<c:url value="./include/js/${jsFile}.js" />' ></script>
 </c:forTokens>
 
 <script type="application/x-javascript">
