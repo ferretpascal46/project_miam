@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.ldnr.groupe3.DAO.DAOManager;
 import fr.ldnr.groupe3.beans.Commande;
+import fr.ldnr.groupe3.beans.LigneCommande;
 import fr.ldnr.groupe3.beans.Utilisateur;
 
 /**
@@ -37,26 +38,6 @@ public class Panier extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setAttribute("page", "panier");
-		daoManager.start();
-		List<Commande> commandes = daoManager.getCommandeDAO().list();
-		List<Commande> commandes = daoManager.getCommandeDAO().list();
-
-		daoManager.stop();
-		List<Commande> listeCommandes= new ArrayList<Commande>();
-
-		Utilisateur user = (Utilisateur) request.getSession().getAttribute("user");
-		// parcours les commandes
-		for (Commande commande : commandes) {
-			// selectionne seulement les commandes correspondant à l'utilisateur connecté
-			if(commande.getIdClient() == user.getIdUtilisateur()) {
-				listeCommandes.add(commande);
-			}
-		}
-		
-		for (listeCommandes commande : listeCommandes) {
-			
-		}
-		request.setAttribute("commandes", listeCommandes);
 
 		
 		this.getServletContext().getRequestDispatcher(VUE).forward(request, response);
